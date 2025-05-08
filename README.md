@@ -11,6 +11,13 @@
 ## 🌍 Live Demo
 Check out the live version here: https://biyejidxweber.github.io/Ecobottle/
 
+## 📸 Screenshot
+
+![Ecobottle Homepage](./Ecobottle.jpg)
+
+*Modern, clean, and eco-focused design.*
+
+
 
 ## 📁 Features
 - Responsive website for mobile and desktop
