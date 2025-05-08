@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | EcoBottle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Pacifico&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#7C9082',secondary:'#2C4A3B'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+color: #333333;
+background-color: #FAFAFA;
+}
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Outfit', sans-serif;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+.custom-checkbox {
+display: inline-block;
+position: relative;
+cursor: pointer;
+}
+.custom-checkbox input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+}
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 20px;
+width: 20px;
+background-color: #fff;
+border: 2px solid #7C9082;
+border-radius: 4px;
+}
+.custom-checkbox input:checked ~ .checkmark {
+background-color: #7C9082;
+}
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+.custom-checkbox input:checked ~ .checkmark:after {
+display: block;
+}
+.custom-checkbox .checkmark:after {
+left: 6px;
+top: 2px;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.custom-radio {
+display: inline-block;
+position: relative;
+cursor: pointer;
+}
+.custom-radio input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+}
+.radio-mark {
+position: absolute;
+top: 0;
+left: 0;
+height: 20px;
+width: 20px;
+background-color: #fff;
+border: 2px solid #7C9082;
+border-radius: 50%;
+}
+.custom-radio input:checked ~ .radio-mark {
+background-color: #fff;
+}
+.radio-mark:after {
+content: "";
+position: absolute;
+display: none;
+top: 3px;
+left: 3px;
+width: 10px;
+height: 10px;
+border-radius: 50%;
+background: #7C9082;
+}
+.custom-radio input:checked ~ .radio-mark:after {
+display: block;
+}
+.map-container {
+background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png');
+background-size: cover;
+background-position: center;
+}
+</style>
+</head>
+<body>
+<!-- Header Navigation -->
+<header class="sticky top-0 z-50 bg-white shadow-sm">
+<div class="container mx-auto px-4 py-4 flex items-center justify-between">
+<a href="index.html" class="text-3xl font-['Pacifico'] text-primary">EcoBttle</a>
+<nav class="hidden md:flex space-x-8">
+<a href="index.html" class="font-medium text-gray-800 hover:text-primary transition-colors">Home</a>
+<a href="All-Products-Shop-Page.html" class="font-medium text-gray-800 hover:text-primary transition-colors">Shop</a>
+<a href="Detailed-Impact-Initiatives.html" class="font-medium text-gray-800 hover:text-primary transition-colors">Our Impact</a>
+<a href="#" class="font-medium text-gray-800 hover:text-primary transition-colors">About Us</a>
+<a href="Contact-Us.html" class="font-medium text-primary font-semibold transition-colors">Contact</a>
+</nav>
+<div class="flex items-center space-x-6">
+<div class="relative">
+<input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+<div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+<i class="ri-search-line"></i>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary transition-colors">
+<i class="ri-user-line ri-lg"></i>
+</a>
+<div class="relative">
+<a href="#" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary transition-colors">
+<i class="ri-shopping-cart-line ri-lg"></i>
+</a>
+<span class="absolute -top-1 -right-1 bg-primary text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">3</span>
+</div>
+</div>
+<button class="block md:hidden w-10 h-10 flex items-center justify-center">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</div>
+</header>
+<!-- Breadcrumb -->
+<div class="bg-white border-b border-gray-100">
+<div class="container mx-auto px-4 py-3">
+<div class="flex items-center text-sm text-gray-500">
+<a href="https://readdy.ai/home/d48ef4ce-be6e-413a-bf04-2fc026239dee/ed5d46be-3e96-4dcd-ba88-b9fade3ed90f" data-readdy="true" class="hover:text-primary transition-colors">Home</a>
+<span class="mx-2">/</span>
+<span class="text-primary">Contact Us</span>
+</div>
+</div>
+</div>
+<!-- Hero Section -->
+<section class="bg-[#F5F1E8] py-16">
+<div class="container mx-auto px-4">
+<div class="text-center max-w-3xl mx-auto">
+<h1 class="text-4xl md:text-5xl font-bold mb-4">Get in Touch</h1>
+<p class="text-lg text-gray-600 mb-8">We're here to help with any questions about our products, sustainability initiatives, or how we can work together for a greener future.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mt-8">
+<div class="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+<div class="w-14 h-14 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4 text-primary">
+<i class="ri-phone-line ri-xl"></i>
+</div>
+<h3 class="font-semibold text-lg mb-2">Call Us</h3>
+<p class="text-gray-600 mb-4">(503) 555-0123</p>
+<p class="text-sm text-gray-500">Mon-Fri: 9AM - 5PM PT</p>
+</div>
+<div class="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+<div class="w-14 h-14 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4 text-primary">
+<i class="ri-mail-line ri-xl"></i>
+</div>
+<h3 class="font-semibold text-lg mb-2">Email Us</h3>
+<p class="text-gray-600 mb-4">hello@ecobottle.com</p>
+<p class="text-sm text-gray-500">We respond within 24 hours</p>
+</div>
+<div class="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+<div class="w-14 h-14 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4 text-primary">
+<i class="ri-map-pin-line ri-xl"></i>
+</div>
+<h3 class="font-semibold text-lg mb-2">Visit Us</h3>
+<p class="text-gray-600 mb-4">123 Eco Way, Portland, OR 97201</p>
+<p class="text-sm text-gray-500">Mon-Fri: 10AM - 6PM PT</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Form & Map Section -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<!-- Contact Form -->
+<div>
+<h2 class="text-3xl font-bold mb-6">Send Us a Message</h2>
+<p class="text-gray-600 mb-8">Have a question or feedback? Fill out the form below and we'll get back to you as soon as possible.</p>
+<form id="contactForm" class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">First Name *</label>
+<input type="text" id="firstName" name="firstName" required class="w-full px-4 py-3 rounded border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+<div>
+<label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">Last Name *</label>
+<input type="text" id="lastName" name="lastName" required class="w-full px-4 py-3 rounded border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+</div>
+<div>
+<label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+<input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+</div>
+<div>
+<label for="inquiryType" class="block text-sm font-medium text-gray-700 mb-1">Inquiry Type *</label>
+<div class="relative">
+<select id="inquiryType" name="inquiryType" required class="w-full px-4 py-3 rounded border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm appearance-none pr-8">
+<option value="">Select an option</option>
+<option value="customer-support">Customer Support</option>
+<option value="product-inquiry">Product Inquiry</option>
+<option value="wholesale">Wholesale Inquiry</option>
+<option value="press">Press & Media</option>
+<option value="sustainability">Sustainability Programs</option>
+<option value="other">Other</option>
+</select>
+<div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none text-gray-500">
+<i class="ri-arrow-down-s-line"></i>
+</div>
+</div>
+</div>
+<div>
+<label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message *</label>
+<textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 rounded border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm"></textarea>
+</div>
+<div>
+<label class="custom-checkbox">
+<input type="checkbox" name="newsletter" id="newsletter">
+<span class="checkmark"></span>
+<span class="ml-7 text-gray-700">Subscribe to our newsletter for updates on new products and sustainability initiatives</span>
+</label>
+</div>
+<button type="submit" class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Send Message</button>
+</form>
+</div>
+<!-- Map -->
+<div>
+<h2 class="text-3xl font-bold mb-6">Our Location</h2>
+<p class="text-gray-600 mb-8">Visit our flagship store and headquarters in Portland, where sustainability meets style.</p>
+<div class="rounded-lg overflow-hidden shadow-sm border border-gray-200 h-[400px] map-container"></div>
+<div class="mt-6">
+<div class="flex items-start mb-4">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-1">
+<i class="ri-map-pin-line"></i>
+</div>
+<div>
+<h4 class="font-medium">EcoBottle Headquarters</h4>
+<p class="text-gray-600">123 Eco Way, Portland, OR 97201</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-1">
+<i class="ri-time-line"></i>
+</div>
+<div>
+<h4 class="font-medium">Store Hours</h4>
+<p class="text-gray-600">Monday - Friday: 10AM - 6PM PT</p>
+<p class="text-gray-600">Saturday: 11AM - 5PM PT</p>
+<p class="text-gray-600">Sunday: Closed</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Inquiry Types Section -->
+<section class="py-16 bg-[#F5F1E8]">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-3">How Can We Help You?</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Choose the department that best matches your inquiry for the fastest response.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Customer Support -->
+<div class="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6 text-primary">
+<i class="ri-customer-service-2-line ri-2x"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Customer Support</h3>
+<p class="text-gray-600 mb-6">Need help with your order, product usage, or have questions about returns? Our customer support team is here to assist you.</p>
+<ul class="space-y-3 mb-6">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-1">
+<i class="ri-mail-line"></i>
+</div>
+<span class="text-gray-600">support@ecobottle.com</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-1">
+<i class="ri-phone-line"></i>
+</div>
+<span class="text-gray-600">(503) 555-0124</span>
+</li>
+</ul>
+<a href="#contactForm" class="text-primary font-medium hover:underline flex items-center">
+Contact Support <i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Wholesale -->
+<div class="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6 text-primary">
+<i class="ri-store-2-line ri-2x"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Wholesale Inquiries</h3>
+<p class="text-gray-600 mb-6">Interested in carrying EcoBottle products in your store? Our wholesale team can provide information on bulk pricing and partnership opportunities.</p>
+<ul class="space-y-3 mb-6">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-1">
+<i class="ri-mail-line"></i>
+</div>
+<span class="text-gray-600">wholesale@ecobottle.com</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-1">
+<i class="ri-phone-line"></i>
+</div>
+<span class="text-gray-600">(503) 555-0125</span>
+</li>
+</ul>
+<a href="#contactForm" class="text-primary font-medium hover:underline flex items-center">
+Request Wholesale Info <i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Press & Media -->
+<div class="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6 text-primary">
+<i class="ri-newspaper-line ri-2x"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Press & Media</h3>
+<p class="text-gray-600 mb-6">Working on a story about sustainability or innovative products? Our press team can provide information, interviews, and high-resolution images.</p>
+<ul class="space-y-3 mb-6">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-1">
+<i class="ri-mail-line"></i>
+</div>
+<span class="text-gray-600">press@ecobottle.com</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-1">
+<i class="ri-phone-line"></i>
+</div>
+<span class="text-gray-600">(503) 555-0126</span>
+</li>
+</ul>
+<a href="#contactForm" class="text-primary font-medium hover:underline flex items-center">
+Contact Press Team <i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-3">Frequently Asked Questions</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Find quick answers to our most commonly asked questions.</p>
+</div>
+<div class="max-w-3xl mx-auto">
+<div class="space-y-6">
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<button class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
+<span class="font-medium">How long will my order take to ship?</span>
+<i class="ri-arrow-down-s-line text-gray-500 transition-transform"></i>
+</button>
+<div class="faq-content hidden px-6 pb-6">
+<p class="text-gray-600">Standard orders typically ship within 1-2 business days. Delivery times vary by location but generally range from 3-7 business days for domestic orders. International shipping can take 7-14 business days depending on the destination country.</p>
+</div>
+</div>
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<button class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
+<span class="font-medium">What is your return policy?</span>
+<i class="ri-arrow-down-s-line text-gray-500 transition-transform"></i>
+</button>
+<div class="faq-content hidden px-6 pb-6">
+<p class="text-gray-600">We offer a 30-day satisfaction guarantee on all our products. If you're not completely satisfied, you can return unused items in their original packaging for a full refund or exchange. Please note that customized products cannot be returned unless there's a manufacturing defect.</p>
+</div>
+</div>
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<button class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
+<span class="font-medium">Are your bottles dishwasher safe?</span>
+<i class="ri-arrow-down-s-line text-gray-500 transition-transform"></i>
+</button>
+<div class="faq-content hidden px-6 pb-6">
+<p class="text-gray-600">Most of our bottles are dishwasher safe on the top rack, but we recommend hand washing for optimal longevity, especially for bottles with bamboo components or special finishes. Always check the care instructions that come with your specific bottle model.</p>
+</div>
+</div>
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<button class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
+<span class="font-medium">How do I clean my bottle properly?</span>
+<i class="ri-arrow-down-s-line text-gray-500 transition-transform"></i>
+</button>
+<div class="faq-content hidden px-6 pb-6">
+<p class="text-gray-600">For regular cleaning, use warm water and mild dish soap with a bottle brush. For deeper cleaning, fill the bottle with a solution of one part white vinegar to five parts water, let it sit overnight, then rinse thoroughly. Bottle cleaning tablets are also effective for removing stubborn odors or stains.</p>
+</div>
+</div>
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<button class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
+<span class="font-medium">How can I track my order?</span>
+<i class="ri-arrow-down-s-line text-gray-500 transition-transform"></i>
+</button>
+<div class="faq-content hidden px-6 pb-6">
+<p class="text-gray-600">Once your order ships, you'll receive a confirmation email with tracking information. You can also log into your account on our website to view your order status and tracking details. If you have any issues tracking your order, please contact our customer support team.</p>
+</div>
+</div>
+</div>
+<div class="text-center mt-10">
+<p class="text-gray-600 mb-4">Can't find what you're looking for?</p>
+<a href="#contactForm" class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap inline-block">Contact Us</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Media Section -->
+<section class="py-16 bg-[#F5F1E8]">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-3">Connect With Us</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Follow us on social media for sustainability tips, product updates, and behind-the-scenes content.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a href="#" class="w-16 h-16 flex items-center justify-center rounded-full bg-white text-primary hover:bg-primary hover:text-white transition-colors shadow-sm">
+<i class="ri-facebook-fill ri-xl"></i>
+</a>
+<a href="#" class="w-16 h-16 flex items-center justify-center rounded-full bg-white text-primary hover:bg-primary hover:text-white transition-colors shadow-sm">
+<i class="ri-instagram-line ri-xl"></i>
+</a>
+<a href="#" class="w-16 h-16 flex items-center justify-center rounded-full bg-white text-primary hover:bg-primary hover:text-white transition-colors shadow-sm">
+<i class="ri-twitter-x-line ri-xl"></i>
+</a>
+<a href="#" class="w-16 h-16 flex items-center justify-center rounded-full bg-white text-primary hover:bg-primary hover:text-white transition-colors shadow-sm">
+<i class="ri-pinterest-line ri-xl"></i>
+</a>
+<a href="#" class="w-16 h-16 flex items-center justify-center rounded-full bg-white text-primary hover:bg-primary hover:text-white transition-colors shadow-sm">
+<i class="ri-youtube-line ri-xl"></i>
+</a>
+<a href="#" class="w-16 h-16 flex items-center justify-center rounded-full bg-white text-primary hover:bg-primary hover:text-white transition-colors shadow-sm">
+<i class="ri-linkedin-fill ri-xl"></i>
+</a>
+</div>
+<div class="max-w-xl mx-auto mt-12 text-center">
+<h3 class="text-xl font-semibold mb-6">Share Your EcoBottle Journey</h3>
+<p class="text-gray-600 mb-4">Tag us in your photos using #EcoBottleLife for a chance to be featured on our page!</p>
+<div class="grid grid-cols-3 gap-4 mt-8">
+<div class="rounded-lg overflow-hidden h-32 shadow-sm">
+<img src="https://readdy.ai/api/search-image?query=Person%2520hiking%2520in%2520mountains%2520with%2520eco-friendly%2520water%2520bottle%2520attached%2520to%2520backpack.%2520Natural%2520outdoor%2520setting%2520with%2520green%2520trees%2520and%2520blue%2520sky.%2520The%2520person%2520is%2520wearing%2520hiking%2520gear%2520and%2520enjoying%2520nature.%2520Candid%2520lifestyle%2520photography%2520with%2520natural%2520lighting.&width=300&height=300&seq=3001&orientation=squarish" alt="Customer with EcoBottle" class="w-full h-full object-cover">
+</div>
+<div class="rounded-lg overflow-hidden h-32 shadow-sm">
+<img src="https://readdy.ai/api/search-image?query=Person%2520at%2520desk%2520in%2520modern%2520office%2520with%2520stylish%2520eco-friendly%2520water%2520bottle.%2520Clean%2520workspace%2520with%2520laptop%2520and%2520plants.%2520Natural%2520lighting%2520from%2520window.%2520Professional%2520environment%2520with%2520minimalist%2520aesthetic.%2520Lifestyle%2520photography%2520showing%2520sustainable%2520products%2520in%2520daily%2520use.&width=300&height=300&seq=3002&orientation=squarish" alt="Customer with EcoBottle" class="w-full h-full object-cover">
+</div>
+<div class="rounded-lg overflow-hidden h-32 shadow-sm">
+<img src="https://readdy.ai/api/search-image?query=Person%2520at%2520beach%2520sunset%2520holding%2520eco-friendly%2520water%2520bottle.%2520Golden%2520hour%2520lighting%2520with%2520orange%2520and%2520pink%2520sky.%2520Ocean%2520waves%2520in%2520background.%2520Relaxed%2520casual%2520setting%2520showing%2520sustainable%2520lifestyle.%2520Warm%2520tones%2520and%2520natural%2520environment.&width=300&height=300&seq=3003&orientation=squarish" alt="Customer with EcoBottle" class="w-full h-full object-cover">
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-white pt-16 pb-8 border-t border-gray-100">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<!-- Company Info -->
+<div>
+<a href="#" class="text-3xl font-['Pacifico'] text-primary mb-6 inline-block">logo</a>
+<p class="text-gray-600 mb-6">We're on a mission to eliminate single-use plastic bottles while providing premium hydration solutions that last a lifetime.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors">
+<i class="ri-twitter-x-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors">
+<i class="ri-pinterest-line"></i>
+</a>
+</div>
+</div>
+<!-- Quick Links -->
+<div>
+<h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Shop All</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">About Us</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Sustainability</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Our Impact</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Blog</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">FAQ</a></li>
+</ul>
+</div>
+<!-- Customer Service -->
+<div>
+<h4 class="text-lg font-semibold mb-6">Customer Service</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-primary font-medium">Contact Us</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Shipping Policy</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Returns & Exchanges</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Warranty Information</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Privacy Policy</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Terms of Service</a></li>
+</ul>
+</div>
+<!-- Contact Info -->
+<div>
+<h4 class="text-lg font-semibold mb-6">Contact Us</h4>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-1">
+<i class="ri-map-pin-line"></i>
+</div>
+<span class="text-gray-600">123 Eco Way, Portland, OR 97201</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-1">
+<i class="ri-phone-line"></i>
+</div>
+<span class="text-gray-600">(503) 555-0123</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-1">
+<i class="ri-mail-line"></i>
+</div>
+<span class="text-gray-600">hello@ecobottle.com</span>
+</li>
+</ul>
+<h4 class="text-lg font-semibold mt-8 mb-4">We Accept</h4>
+<div class="flex space-x-3">
+<div class="w-10 h-6 flex items-center justify-center text-gray-600">
+<i class="ri-visa-fill ri-lg"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center text-gray-600">
+<i class="ri-mastercard-fill ri-lg"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center text-gray-600">
+<i class="ri-paypal-fill ri-lg"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center text-gray-600">
+<i class="ri-apple-fill ri-lg"></i>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-gray-100 text-center text-gray-500 text-sm">
+<p>&copy; 2025 EcoBottle. All rights reserved. Designed Biyejid Hosen</p>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Form submission
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+contactForm.addEventListener('submit', function(e) {
+e.preventDefault();
+// Simple validation
+let isValid = true;
+const requiredFields = contactForm.querySelectorAll('[required]');
+requiredFields.forEach(field => {
+if (!field.value.trim()) {
+isValid = false;
+field.classList.add('border-red-500');
+} else {
+field.classList.remove('border-red-500');
+}
+});
+if (isValid) {
+// Show success message (in real implementation, this would send data to server)
+alert('Thank you for your message! We will get back to you soon.');
+contactForm.reset();
+} else {
+alert('Please fill in all required fields.');
+}
+});
+}
+// FAQ toggles
+const faqToggles = document.querySelectorAll('.faq-toggle');
+if (faqToggles.length > 0) {
+faqToggles.forEach(toggle => {
+toggle.addEventListener('click', function() {
+const content = this.nextElementSibling;
+const isExpanded = this.getAttribute('aria-expanded') === 'true';
+// Toggle current FAQ
+this.setAttribute('aria-expanded', !isExpanded);
+content.classList.toggle('hidden');
+this.querySelector('i').classList.toggle('rotate-180');
+// Close other FAQs (optional, for accordion behavior)
+if (!isExpanded) {
+faqToggles.forEach(otherToggle => {
+if (otherToggle !== toggle) {
+otherToggle.setAttribute('aria-expanded', 'false');
+otherToggle.nextElementSibling.classList.add('hidden');
+otherToggle.querySelector('i').classList.remove('rotate-180');
+}
+});
+}
+});
+});
+}
+});
+</script>
+</body>
+</html>

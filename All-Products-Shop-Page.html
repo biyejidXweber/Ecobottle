@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoBottle | Shop All Products</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Pacifico&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#7C9082',secondary:'#2C4A3B'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333333;
+            background-color: #FAFAFA;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', sans-serif;
+        }
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .custom-checkbox {
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+        }
+        .custom-checkbox input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: #fff;
+            border: 2px solid #7C9082;
+            border-radius: 4px;
+        }
+        .custom-checkbox input:checked ~ .checkmark {
+            background-color: #7C9082;
+        }
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+        .custom-checkbox input:checked ~ .checkmark:after {
+            display: block;
+        }
+        .custom-checkbox .checkmark:after {
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        .price-range-slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 6px;
+            border-radius: 5px;
+            background: #e0e0e0;
+            outline: none;
+        }
+        .price-range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #7C9082;
+            cursor: pointer;
+        }
+        .price-range-slider::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #7C9082;
+            cursor: pointer;
+            border: none;
+        }
+        .tab-button {
+            position: relative;
+            z-index: 1;
+        }
+        .tab-button.active {
+            color: white;
+        }
+        .tab-indicator {
+            position: absolute;
+            height: 80%;
+            top: 10%;
+            z-index: 0;
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+        }
+        .sort-dropdown {
+            position: relative;
+        }
+        .sort-dropdown-content {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            min-width: 200px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            display: none;
+        }
+        .sort-dropdown.open .sort-dropdown-content {
+            display: block;
+        }
+        .pagination-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+        .pagination-button.active {
+            background-color: #7C9082;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="index.html" class="text-3xl font-['Pacifico'] text-primary">Ecobottle</a>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html"  class="font-medium text-gray-800 hover:text-primary transition-colors">Home</a>
+                <a href="All-Products-Shop-Page.html" class="font-medium text-primary transition-colors">Shop</a>
+                <a href="Detailed-Impact-Initiatives.html" class="font-medium text-gray-800 hover:text-primary transition-colors">Our Impact</a>
+                <a href="#" class="font-medium text-gray-800 hover:text-primary transition-colors">About Us</a>
+                <a href="Contact-Us.html" class="font-medium text-gray-800 hover:text-primary transition-colors">Contact</a>
+            </nav>
+            
+            <div class="flex items-center space-x-6">
+                <div class="relative">
+                    <input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+                    <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-search-line"></i>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary transition-colors">
+                        <i class="ri-user-line ri-lg"></i>
+                    </a>
+                    <div class="relative">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary transition-colors">
+                            <i class="ri-shopping-cart-line ri-lg"></i>
+                        </a>
+                        <span class="absolute -top-1 -right-1 bg-primary text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">3</span>
+                    </div>
+                </div>
+                
+                <button class="block md:hidden w-10 h-10 flex items-center justify-center">
+                    <i class="ri-menu-line ri-lg"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Shop Page Header -->
+    <section class="bg-[#F5F1E8] py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center text-center">
+                <h1 class="text-4xl font-bold mb-4">Shop All Products</h1>
+                <p class="text-gray-600 max-w-2xl">Discover our complete collection of eco-friendly bottles designed to reduce plastic waste while keeping your drinks at the perfect temperature.</p>
+                <div class="flex items-center mt-6 text-sm">
+                    <a href="https://readdy.ai/home/d48ef4ce-be6e-413a-bf04-2fc026239dee/ed5d46be-3e96-4dcd-ba88-b9fade3ed90f" data-readdy="true" class="text-primary hover:underline flex items-center">
+                        <i class="ri-arrow-left-line mr-1"></i> Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="bg-white border-b border-gray-200 sticky top-[73px] z-40">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <!-- Category Tabs -->
+                <div class="flex items-center bg-gray-100 p-1 rounded-full relative">
+                    <button class="tab-button px-4 py-2 text-sm font-medium rounded-full relative z-10 active" data-category="all">All Products</button>
+                    <button class="tab-button px-4 py-2 text-sm font-medium rounded-full relative z-10" data-category="insulated">Insulated</button>
+                    <button class="tab-button px-4 py-2 text-sm font-medium rounded-full relative z-10" data-category="glass">Glass</button>
+                    <button class="tab-button px-4 py-2 text-sm font-medium rounded-full relative z-10" data-category="kids">Kids</button>
+                    <div class="tab-indicator bg-primary absolute left-1 w-[110px]"></div>
+                </div>
+
+                <!-- Filter Controls -->
+                <div class="flex items-center space-x-4 w-full md:w-auto">
+                    <!-- Price Filter Button -->
+                    <div class="relative filter-dropdown" id="priceFilter">
+                        <button class="flex items-center space-x-2 px-4 py-2 border border-gray-200 rounded-button text-sm font-medium hover:border-primary transition-colors whitespace-nowrap">
+                            <i class="ri-money-dollar-circle-line"></i>
+                            <span>Price</span>
+                            <i class="ri-arrow-down-s-line"></i>
+                        </button>
+                        <div class="filter-dropdown-content hidden absolute top-full left-0 mt-2 p-4 bg-white rounded-lg shadow-lg z-20 w-64">
+                            <h4 class="font-medium mb-3">Price Range</h4>
+                            <div class="mb-4">
+                                <input type="range" min="0" max="100" value="50" class="price-range-slider" id="priceRangeSlider">
+                                <div class="flex justify-between mt-2">
+                                    <span class="text-sm text-gray-500">$0</span>
+                                    <span class="text-sm text-gray-500">$100</span>
+                                </div>
+                            </div>
+                            <div class="flex space-x-3">
+                                <div class="flex-1">
+                                    <label class="text-xs text-gray-500 mb-1 block">Min</label>
+                                    <input type="number" value="0" min="0" class="w-full px-3 py-2 border border-gray-200 rounded text-sm" id="minPrice">
+                                </div>
+                                <div class="flex-1">
+                                    <label class="text-xs text-gray-500 mb-1 block">Max</label>
+                                    <input type="number" value="100" min="0" class="w-full px-3 py-2 border border-gray-200 rounded text-sm" id="maxPrice">
+                                </div>
+                            </div>
+                            <div class="mt-4 flex justify-end">
+                                <button class="bg-primary text-white px-4 py-2 rounded-button text-sm hover:bg-opacity-90 transition-colors whitespace-nowrap">Apply</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Material Filter Button -->
+                    <div class="relative filter-dropdown" id="materialFilter">
+                        <button class="flex items-center space-x-2 px-4 py-2 border border-gray-200 rounded-button text-sm font-medium hover:border-primary transition-colors whitespace-nowrap">
+                            <i class="ri-leaf-line"></i>
+                            <span>Material</span>
+                            <i class="ri-arrow-down-s-line"></i>
+                        </button>
+                        <div class="filter-dropdown-content hidden absolute top-full left-0 mt-2 p-4 bg-white rounded-lg shadow-lg z-20 w-64">
+                            <h4 class="font-medium mb-3">Material</h4>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <label class="custom-checkbox">
+                                        <input type="checkbox" checked>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <span class="ml-8">Stainless Steel</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <label class="custom-checkbox">
+                                        <input type="checkbox" checked>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <span class="ml-8">Glass</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <label class="custom-checkbox">
+                                        <input type="checkbox" checked>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <span class="ml-8">Bamboo</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <label class="custom-checkbox">
+                                        <input type="checkbox" checked>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <span class="ml-8">Silicone</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 flex justify-end">
+                                <button class="bg-primary text-white px-4 py-2 rounded-button text-sm hover:bg-opacity-90 transition-colors whitespace-nowrap">Apply</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sort Dropdown -->
+                    <div class="relative sort-dropdown ml-auto" id="sortDropdown">
+                        <button class="flex items-center space-x-2 px-4 py-2 border border-gray-200 rounded-button text-sm font-medium hover:border-primary transition-colors whitespace-nowrap">
+                            <i class="ri-sort-desc"></i>
+                            <span>Sort By: Featured</span>
+                            <i class="ri-arrow-down-s-line"></i>
+                        </button>
+                        <div class="sort-dropdown-content">
+                            <div class="py-2">
+                                <button class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors">Featured</button>
+                                <button class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors">Price: Low to High</button>
+                                <button class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors">Price: High to Low</button>
+                                <button class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors">Newest</button>
+                                <button class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors">Best Selling</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Clear Filters Button -->
+                    <button class="flex items-center space-x-2 px-4 py-2 text-primary text-sm font-medium hover:underline transition-colors whitespace-nowrap">
+                        <i class="ri-refresh-line"></i>
+                        <span>Clear</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="py-12 bg-[#FAFAFA]">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100">
+                    <div class="h-64 overflow-hidden bg-[#F5F1E8]">
+                        <img src="https://readdy.ai/api/search-image?query=Minimalist%2520stainless%2520steel%2520water%2520bottle%2520in%2520sage%2520green%2520color%2520with%2520bamboo%2520cap%2520on%2520a%2520light%2520beige%2520background.%2520The%2520bottle%2520has%2520a%2520sleek%252C%2520modern%2520design%2520with%2520a%2520matte%2520finish%2520and%2520subtle%2520eco-friendly%2520logo.%2520High-quality%2520product%2520photography%2520with%2520soft%2520shadows%2520and%2520clean%2520composition.&width=600&height=600&seq=1001&orientation=squarish" alt="Alpine Eco Bottle" class="w-full h-full object-contain object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Alpine Eco Bottle</h3>
+                        <p class="text-gray-600 mb-4">Double-walled insulation keeps drinks cold for 24 hours or hot for 12 hours.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold">$34.99</span>
+                            <button class="bg-primary text-white px-4 py-2 rounded-button hover:bg-opacity-90 transition-colors flex items-center gap-2 whitespace-nowrap">
+                                <i class="ri-shopping-cart-line"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100">
+                    <div class="h-64 overflow-hidden bg-[#F5F1E8]">
+                        <img src="https://readdy.ai/api/search-image?query=Elegant%2520glass%2520water%2520bottle%2520with%2520silicone%2520protective%2520sleeve%2520in%2520deep%2520forest%2520green%2520color%2520on%2520a%2520light%2520beige%2520background.%2520The%2520bottle%2520features%2520a%2520minimalist%2520design%2520with%2520a%2520stainless%2520steel%2520cap%2520and%2520subtle%2520eco-friendly%2520branding.%2520High-quality%2520product%2520photography%2520with%2520soft%2520shadows%2520and%2520clean%2520composition.&width=600&height=600&seq=1002&orientation=squarish" alt="Terra Glass Bottle" class="w-full h-full object-contain object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Terra Glass Bottle</h3>
+                        <p class="text-gray-600 mb-4">Borosilicate glass with protective silicone sleeve and leak-proof bamboo lid.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold">$29.99</span>
+                            <button class="bg-primary text-white px-4 py-2 rounded-button hover:bg-opacity-90 transition-colors flex items-center gap-2 whitespace-nowrap">
+                                <i class="ri-shopping-cart-line"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100">
+                    <div class="h-64 overflow-hidden bg-[#F5F1E8]">
+                        <img src="https://readdy.ai/api/search-image?query=Modern%2520copper%2520vacuum%2520insulated%2520water%2520bottle%2520with%2520a%2520matte%2520finish%2520and%2520wooden%2520cap%2520on%2520a%2520light%2520beige%2520background.%2520The%2520bottle%2520has%2520a%2520sleek%252C%2520minimalist%2520design%2520with%2520subtle%2520eco-friendly%2520branding.%2520High-quality%2520product%2520photography%2520with%2520soft%2520shadows%2520and%2520clean%2520composition.&width=600&height=600&seq=1003&orientation=squarish" alt="Copper Thermal Flask" class="w-full h-full object-contain object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Copper Thermal Flask</h3>
+                        <p class="text-gray-600 mb-4">Triple-layer insulation with copper lining for superior temperature retention.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold">$39.99</span>
+                            <button class="bg-primary text-white px-4 py-2 rounded-button hover:bg-opacity-90 transition-colors flex items-center gap-2 whitespace-nowrap">
+                                <i class="ri-shopping-cart-line"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100">
+                    <div class="h-64 overflow-hidden bg-[#F5F1E8]">
+                        <img src="https://readdy.ai/api/search-image?query=Lightweight%2520bamboo%2520and%2520stainless%2520steel%2520water%2520bottle%2520with%2520infuser%2520on%2520a%2520light%2520beige%2520background.%2520The%2520bottle%2520has%2520a%2520natural%2520bamboo%2520exterior%2520with%2520stainless%2520steel%2520interior%2520and%2520a%2520built-in%2520infuser%2520for%2520fruit%2520or%2520tea.%2520High-quality%2520product%2520photography%2520with%2520soft%2520shadows%2520and%2520clean%2520composition.&width=600&height=600&seq=1004&orientation=squarish" alt="Bamboo Infuser Bottle" class="w-full h-full object-contain object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Bamboo Infuser Bottle</h3>
+                        <p class="text-gray-600 mb-4">Bamboo exterior with stainless steel interior and removable infuser basket.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold">$32.99</span>
+                            <button class="bg-primary text-white px-4 py-2 rounded-button hover:bg-opacity-90 transition-colors flex items-center gap-2 whitespace-nowrap">
+                                <i class="ri-shopping-cart-line"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100">
+                    <div class="h-64 overflow-hidden bg-[#F5F1E8]">
+                        <img src="https://readdy.ai/api/search-image?query=Collapsible%2520silicone%2520water%2520bottle%2520in%2520teal%2520color%2520with%2520carabiner%2520clip%2520on%2520a%2520light%2520beige%2520background.%2520The%2520bottle%2520has%2520a%2520modern%252C%2520practical%2520design%2520that%2520can%2520be%2520folded%2520when%2520empty%2520to%2520save%2520space.%2520High-quality%2520product%2520photography%2520with%2520soft%2520shadows%2520and%2520clean%2520composition.&width=600&height=600&seq=1005&orientation=squarish" alt="Nomad Collapsible Bottle" class="w-full h-full object-contain object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Nomad Collapsible Bottle</h3>
+                        <p class="text-gray-600 mb-4">Food-grade silicone that collapses when empty for ultra-portable hydration.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold">$24.99</span>
+                            <button class="bg-primary text-white px-4 py-2 rounded-button hover:bg-opacity-90 transition-colors flex items-center gap-2 whitespace-nowrap">
+                                <i class="ri-shopping-cart-line"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100">
+                    <div class="h-64 overflow-hidden bg-[#F5F1E8]">
+                        <img src="https://readdy.ai/api/search-image?query=Kids%2520eco-friendly%2520water%2520bottle%2520with%2520fun%2520nature-inspired%2520patterns%2520on%2520a%2520light%2520beige%2520background.%2520The%2520bottle%2520is%2520made%2520from%2520safe%252C%2520BPA-free%2520materials%2520with%2520an%2520easy-to-use%2520spout%2520lid.%2520Colorful%2520but%2520tasteful%2520design%2520with%2520woodland%2520animals.%2520High-quality%2520product%2520photography%2520with%2520soft%2520shadows%2520and%2520clean%2520composition.&width=600&height=600&seq=1006&orientation=squarish" alt="Little Explorer Kids Bottle" class="w-full h-full object-contain object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Little Explorer Kids Bottle</h3>
+                        <p class="text-gray-600 mb-4">BPA-free with easy-sip straw and fun nature-inspired patterns for children.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold">$19.99</span>
+                            <button class="bg-primary text-white px-4 py-2 rounded-button hover:bg-opacity-90 transition-colors flex items-center gap-2 whitespace-nowrap">
+                                <i class="ri-shopping-cart-line"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 7 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100">
+                    <div class="h-64 overflow-hidden bg-[#F5F1E8]">
+                        <img src="https://readdy.ai/api/search-image?query=Minimalist%2520stainless%2520steel%2520water%2520bottle%2520in%2520matte%2520black%2520with%2520cork%2520accent%2520on%2520a%2520light%2520beige%2520background.%2520The%2520bottle%2520has%2520a%2520sleek%252C%2520modern%2520design%2520with%2520subtle%2520eco-friendly%2520branding.%2520High-quality%2520product%2520photography%2520with%2520soft%2520shadows%2520and%2520clean%2520composition.&width=600&height=600&seq=1007&orientation=squarish" alt="Obsidian Thermal Bottle" class="w-full h-full object-contain object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Obsidian Thermal Bottle</h3>
+                        <p class="text-gray-600 mb-4">Matte black stainless steel with cork accent and double-wall insulation.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold">$36.99</span>
+                            <button class="bg-primary text-white px-4 py-2 rounded-button hover:bg-opacity-90 transition-colors flex items-center gap-2 whitespace-nowrap">
+                                <i class="ri-shopping-cart-line"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 8 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100">
+                    <div class="h-64 overflow-hidden bg-[#F5F1E8]">
+                        <img src="https://readdy.ai/api/search-image?query=Elegant%2520glass%2520infuser%2520water%2520bottle%2520with%2520bamboo%2520lid%2520and%2520protective%2520sleeve%2520in%2520light%2520blue%2520color%2520on%2520a%2520light%2520beige%2520background.%2520The%2520bottle%2520has%2520a%2520built-in%2520glass%2520infuser%2520for%2520fruit%2520or%2520tea.%2520High-quality%2520product%2520photography%2520with%2520soft%2520shadows%2520and%2520clean%2520composition.&width=600&height=600&seq=1008&orientation=squarish" alt="Aqua Glass Infuser" class="w-full h-full object-contain object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Aqua Glass Infuser</h3>
+                        <p class="text-gray-600 mb-4">Glass bottle with built-in infuser chamber and protective silicone sleeve.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold">$31.99</span>
+                            <button class="bg-primary text-white px-4 py-2 rounded-button hover:bg-opacity-90 transition-colors flex items-center gap-2 whitespace-nowrap">
+                                <i class="ri-shopping-cart-line"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 9 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100">
+                    <div class="h-64 overflow-hidden bg-[#F5F1E8]">
+                        <img src="https://readdy.ai/api/search-image?query=Insulated%2520stainless%2520steel%2520sports%2520water%2520bottle%2520with%2520flip-top%2520lid%2520in%2520vibrant%2520red%2520color%2520on%2520a%2520light%2520beige%2520background.%2520The%2520bottle%2520has%2520an%2520ergonomic%2520design%2520for%2520active%2520lifestyles%2520with%2520a%2520non-slip%2520grip.%2520High-quality%2520product%2520photography%2520with%2520soft%2520shadows%2520and%2520clean%2520composition.&width=600&height=600&seq=1009&orientation=squarish" alt="Active Sport Bottle" class="w-full h-full object-contain object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Active Sport Bottle</h3>
+                        <p class="text-gray-600 mb-4">Ergonomic design with flip-top lid and non-slip grip for active lifestyles.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold">$28.99</span>
+                            <button class="bg-primary text-white px-4 py-2 rounded-button hover:bg-opacity-90 transition-colors flex items-center gap-2 whitespace-nowrap">
+                                <i class="ri-shopping-cart-line"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 10 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100">
+                    <div class="h-64 overflow-hidden bg-[#F5F1E8]">
+                        <img src="https://readdy.ai/api/search-image?query=Kids%2520stainless%2520steel%2520water%2520bottle%2520with%2520straw%2520lid%2520in%2520bright%2520yellow%2520color%2520with%2520playful%2520animal%2520design%2520on%2520a%2520light%2520beige%2520background.%2520The%2520bottle%2520is%2520sized%2520for%2520children%2520with%2520easy-grip%2520sides%2520and%2520a%2520leak-proof%2520lid.%2520High-quality%2520product%2520photography%2520with%2520soft%2520shadows%2520and%2520clean%2520composition.&width=600&height=600&seq=1010&orientation=squarish" alt="Safari Kids Bottle" class="w-full h-full object-contain object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Safari Kids Bottle</h3>
+                        <p class="text-gray-600 mb-4">Stainless steel with playful animal designs and easy-grip sides for little hands.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold">$22.99</span>
+                            <button class="bg-primary text-white px-4 py-2 rounded-button hover:bg-opacity-90 transition-colors flex items-center gap-2 whitespace-nowrap">
+                                <i class="ri-shopping-cart-line"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 11 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100">
+                    <div class="h-64 overflow-hidden bg-[#F5F1E8]">
+                        <img src="https://readdy.ai/api/search-image?query=Minimalist%2520stainless%2520steel%2520water%2520bottle%2520with%2520wide%2520mouth%2520in%2520brushed%2520silver%2520finish%2520on%2520a%2520light%2520beige%2520background.%2520The%2520bottle%2520has%2520a%2520sleek%252C%2520modern%2520design%2520with%2520a%2520carabiner-friendly%2520cap%2520for%2520outdoor%2520adventures.%2520High-quality%2520product%2520photography%2520with%2520soft%2520shadows%2520and%2520clean%2520composition.&width=600&height=600&seq=1011&orientation=squarish" alt="Summit Wide Mouth Bottle" class="w-full h-full object-contain object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Summit Wide Mouth Bottle</h3>
+                        <p class="text-gray-600 mb-4">Wide mouth design with carabiner-friendly cap for outdoor adventures.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold">$33.99</span>
+                            <button class="bg-primary text-white px-4 py-2 rounded-button hover:bg-opacity-90 transition-colors flex items-center gap-2 whitespace-nowrap">
+                                <i class="ri-shopping-cart-line"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 12 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100">
+                    <div class="h-64 overflow-hidden bg-[#F5F1E8]">
+                        <img src="https://readdy.ai/api/search-image?query=Premium%2520glass%2520water%2520bottle%2520with%2520woven%2520hemp%2520sleeve%2520in%2520natural%2520tan%2520color%2520on%2520a%2520light%2520beige%2520background.%2520The%2520bottle%2520has%2520an%2520artisanal%2520design%2520with%2520a%2520wooden%2520cap%2520and%2520natural%2520materials.%2520High-quality%2520product%2520photography%2520with%2520soft%2520shadows%2520and%2520clean%2520composition.&width=600&height=600&seq=1012&orientation=squarish" alt="Artisan Hemp Bottle" class="w-full h-full object-contain object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Artisan Hemp Bottle</h3>
+                        <p class="text-gray-600 mb-4">Glass bottle with handcrafted woven hemp sleeve and sustainable wooden cap.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold">$37.99</span>
+                            <button class="bg-primary text-white px-4 py-2 rounded-button hover:bg-opacity-90 transition-colors flex items-center gap-2 whitespace-nowrap">
+                                <i class="ri-shopping-cart-line"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="mt-12 flex flex-col md:flex-row items-center justify-between">
+                <div class="text-sm text-gray-500 mb-4 md:mb-0">
+                    Showing 1-12 of 36 products
+                </div>
+                
+                <div class="flex items-center space-x-2">
+                    <button class="pagination-button border border-gray-200 hover:border-primary">
+                        <i class="ri-arrow-left-s-line"></i>
+                    </button>
+                    <button class="pagination-button border border-gray-200 active">1</button>
+                    <button class="pagination-button border border-gray-200 hover:border-primary">2</button>
+                    <button class="pagination-button border border-gray-200 hover:border-primary">3</button>
+                    <button class="pagination-button border border-gray-200 hover:border-primary">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </button>
+                </div>
+                
+                <div class="flex items-center space-x-3 mt-4 md:mt-0">
+                    <span class="text-sm text-gray-500">Show:</span>
+                    <div class="relative">
+                        <select class="appearance-none pl-3 pr-8 py-2 border border-gray-200 rounded text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <option>12</option>
+                            <option>24</option>
+                            <option>36</option>
+                            <option>All</option>
+                        </select>
+                        <div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                            <i class="ri-arrow-down-s-line text-gray-400"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white pt-16 pb-8 border-t border-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <a href="#" class="text-3xl font-['Pacifico'] text-primary mb-6 inline-block">logo</a>
+                    <p class="text-gray-600 mb-6">We're on a mission to eliminate single-use plastic bottles while providing premium hydration solutions that last a lifetime.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors">
+                            <i class="ri-twitter-x-line"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors">
+                            <i class="ri-pinterest-line"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Shop All</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Sustainability</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Our Impact</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Customer Service -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Customer Service</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Shipping Policy</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Returns & Exchanges</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Warranty Information</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Contact Us</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-1">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <span class="text-gray-600">123 Eco Way, Portland, OR 97201</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-1">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <span class="text-gray-600">(503) 555-0123</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-1">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <span class="text-gray-600">hello@ecobottle.com</span>
+                        </li>
+                    </ul>
+                    
+                    <h4 class="text-lg font-semibold mt-8 mb-4">We Accept</h4>
+                    <div class="flex space-x-3">
+                        <div class="w-10 h-6 flex items-center justify-center text-gray-600">
+                            <i class="ri-visa-fill ri-lg"></i>
+                        </div>
+                        <div class="w-10 h-6 flex items-center justify-center text-gray-600">
+                            <i class="ri-mastercard-fill ri-lg"></i>
+                        </div>
+                        <div class="w-10 h-6 flex items-center justify-center text-gray-600">
+                            <i class="ri-paypal-fill ri-lg"></i>
+                        </div>
+                        <div class="w-10 h-6 flex items-center justify-center text-gray-600">
+                            <i class="ri-apple-fill ri-lg"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-100 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 EcoBottle. All rights reserved. Designed Biyejid Hosen</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Filter dropdowns
+            const filterDropdowns = document.querySelectorAll('.filter-dropdown');
+            filterDropdowns.forEach(dropdown => {
+                const button = dropdown.querySelector('button');
+                const content = dropdown.querySelector('.filter-dropdown-content');
+                
+                button.addEventListener('click', function() {
+                    // Close all other dropdowns
+                    filterDropdowns.forEach(otherDropdown => {
+                        if (otherDropdown !== dropdown) {
+                            otherDropdown.querySelector('.filter-dropdown-content').classList.add('hidden');
+                        }
+                    });
+                    
+                    // Toggle current dropdown
+                    content.classList.toggle('hidden');
+                });
+            });
+            
+            // Sort dropdown
+            const sortDropdown = document.getElementById('sortDropdown');
+            const sortButton = sortDropdown.querySelector('button');
+            
+            sortButton.addEventListener('click', function() {
+                sortDropdown.classList.toggle('open');
+            });
+            
+            // Category tabs
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabIndicator = document.querySelector('.tab-indicator');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Move indicator
+                    tabIndicator.style.left = `${this.offsetLeft}px`;
+                    tabIndicator.style.width = `${this.offsetWidth}px`;
+                });
+            });
+            
+            // Price range slider
+            const priceRangeSlider = document.getElementById('priceRangeSlider');
+            const minPriceInput = document.getElementById('minPrice');
+            const maxPriceInput = document.getElementById('maxPrice');
+            
+            if (priceRangeSlider && minPriceInput && maxPriceInput) {
+                priceRangeSlider.addEventListener('input', function() {
+                    const value = this.value;
+                    maxPriceInput.value = value;
+                });
+                
+                minPriceInput.addEventListener('input', function() {
+                    if (parseInt(this.value) > parseInt(maxPriceInput.value)) {
+                        maxPriceInput.value = this.value;
+                    }
+                });
+                
+                maxPriceInput.addEventListener('input', function() {
+                    if (parseInt(this.value) < parseInt(minPriceInput.value)) {
+                        minPriceInput.value = this.value;
+                    }
+                    priceRangeSlider.value = this.value;
+                });
+            }
+            
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function(event) {
+                // Close filter dropdowns
+                filterDropdowns.forEach(dropdown => {
+                    const content = dropdown.querySelector('.filter-dropdown-content');
+                    if (!dropdown.contains(event.target)) {
+                        content.classList.add('hidden');
+                    }
+                });
+                
+                // Close sort dropdown
+                if (!sortDropdown.contains(event.target)) {
+                    sortDropdown.classList.remove('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

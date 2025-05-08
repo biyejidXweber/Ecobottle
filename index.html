@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoBottle | Sustainable Hydration for a Better Tomorrow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Pacifico&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#7C9082',secondary:'#2C4A3B'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+color: #333333;
+background-color: #FAFAFA;
+}
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Outfit', sans-serif;
+}
+.hero-section {
+background-image: url('https://readdy.ai/api/search-image?query=Premium%20eco-friendly%20reusable%20water%20bottle%20made%20of%20sustainable%20materials%20against%20a%20natural%20background%20with%20soft%20green%20leaves%20and%20natural%20light.%20The%20bottle%20has%20a%20modern%20minimalist%20design%20with%20a%20wooden%20cap%20and%20is%20placed%20on%20a%20light%20beige%20surface.%20The%20image%20has%20a%20clean%2C%20bright%20aesthetic%20with%20soft%20shadows%20and%20highlights%20the%20premium%20quality%20of%20the%20product.&width=1920&height=1080&seq=12345&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+.hero-content {
+background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0) 100%);
+}
+.testimonial-card {
+transition: transform 0.3s ease;
+}
+.testimonial-card:hover {
+transform: translateY(-5px);
+}
+.product-card {
+transition: all 0.3s ease;
+}
+.product-card:hover {
+transform: translateY(-8px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+.custom-checkbox {
+display: inline-block;
+position: relative;
+cursor: pointer;
+}
+.custom-checkbox input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+}
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 20px;
+width: 20px;
+background-color: #fff;
+border: 2px solid #7C9082;
+border-radius: 4px;
+}
+.custom-checkbox input:checked ~ .checkmark {
+background-color: #7C9082;
+}
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+.custom-checkbox input:checked ~ .checkmark:after {
+display: block;
+}
+.custom-checkbox .checkmark:after {
+left: 6px;
+top: 2px;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.switch {
+position: relative;
+display: inline-block;
+width: 50px;
+height: 24px;
+}
+.switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+transition: .4s;
+border-radius: 34px;
+}
+.slider:before {
+position: absolute;
+content: "";
+height: 18px;
+width: 18px;
+left: 3px;
+bottom: 3px;
+background-color: white;
+transition: .4s;
+border-radius: 50%;
+}
+input:checked + .slider {
+background-color: #7C9082;
+}
+input:checked + .slider:before {
+transform: translateX(26px);
+}
+</style>
+</head>
+<body>
+<!-- Header Navigation -->
+<header class="sticky top-0 z-50 bg-white shadow-sm">
+<div class="container mx-auto px-4 py-4 flex items-center justify-between">
+<a href="index.html" class="text-3xl font-['Pacifico'] text-primary">EcoBottle</a>
+<nav class="hidden md:flex space-x-8">
+<a href="index.html" class="font-medium text-gray-800 hover:text-primary transition-colors">Home</a>
+<a href="All-Products-Shop-Page.html" class="font-medium text-gray-800 hover:text-primary transition-colors">Shop</a>
+<a href="Detailed-Impact-Initiatives.html" class="font-medium text-gray-800 hover:text-primary transition-colors">Our Impact</a>
+<a href="#" class="font-medium text-gray-800 hover:text-primary transition-colors">About Us</a>
+<a href="Contact-Us.html" class="font-medium text-gray-800 hover:text-primary transition-colors">Contact</a>
+</nav>
+<div class="flex items-center space-x-6">
+<div class="relative">
+<input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+<div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+<i class="ri-search-line"></i>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary transition-colors">
+<i class="ri-user-line ri-lg"></i>
+</a>
+<div class="relative">
+<a href="#" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary transition-colors">
+<i class="ri-shopping-cart-line ri-lg"></i>
+</a>
+<span class="absolute -top-1 -right-1 bg-primary text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">3</span>
+</div>
+</div>
+<button class="block md:hidden w-10 h-10 flex items-center justify-center">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="hero-section relative h-[600px] w-full">
+<div class="absolute inset-0 hero-content flex items-center">
+<div class="container mx-auto px-4 md:px-8 w-full">
+<div class="max-w-xl">
+<h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">Sustainable Hydration for a Better Tomorrow</h1>
+<p class="text-lg mb-8 text-gray-700">Our eco-friendly bottles are crafted from sustainable materials, designed to reduce single-use plastic waste while keeping your drinks at the perfect temperature.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a href="#" class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-opacity-90 transition-colors text-center whitespace-nowrap">Shop Now</a>
+<a href="#" class="border-2 border-primary text-primary px-8 py-3 rounded-button font-medium hover:bg-primary hover:bg-opacity-10 transition-colors text-center whitespace-nowrap">Learn Our Impact</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Products -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-3">Our Featured Collection</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Discover our most popular eco-friendly bottles designed for everyday use, outdoor adventures, and active lifestyles.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Product 1 -->
+<div class="product-card bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100">
+<div class="h-64 overflow-hidden bg-[#F5F1E8]">
+<img src="https://readdy.ai/api/search-image?query=Minimalist%20stainless%20steel%20water%20bottle%20in%20sage%20green%20color%20with%20bamboo%20cap%20on%20a%20light%20beige%20background.%20The%20bottle%20has%20a%20sleek%2C%20modern%20design%20with%20a%20matte%20finish%20and%20subtle%20eco-friendly%20logo.%20High-quality%20product%20photography%20with%20soft%20shadows%20and%20clean%20composition.&width=600&height=600&seq=1001&orientation=squarish" alt="Alpine Eco Bottle" class="w-full h-full object-contain object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">Alpine Eco Bottle</h3>
+<p class="text-gray-600 mb-4">Double-walled insulation keeps drinks cold for 24 hours or hot for 12 hours.</p>
+<div class="flex justify-between items-center">
+<span class="text-lg font-bold">$34.99</span>
+<button class="bg-primary text-white px-4 py-2 rounded-button hover:bg-opacity-90 transition-colors flex items-center gap-2 whitespace-nowrap">
+<i class="ri-shopping-cart-line"></i> Add to Cart
+</button>
+</div>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="product-card bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100">
+<div class="h-64 overflow-hidden bg-[#F5F1E8]">
+<img src="https://readdy.ai/api/search-image?query=Elegant%20glass%20water%20bottle%20with%20silicone%20protective%20sleeve%20in%20deep%20forest%20green%20color%20on%20a%20light%20beige%20background.%20The%20bottle%20features%20a%20minimalist%20design%20with%20a%20stainless%20steel%20cap%20and%20subtle%20eco-friendly%20branding.%20High-quality%20product%20photography%20with%20soft%20shadows%20and%20clean%20composition.&width=600&height=600&seq=1002&orientation=squarish" alt="Terra Glass Bottle" class="w-full h-full object-contain object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">Terra Glass Bottle</h3>
+<p class="text-gray-600 mb-4">Borosilicate glass with protective silicone sleeve and leak-proof bamboo lid.</p>
+<div class="flex justify-between items-center">
+<span class="text-lg font-bold">$29.99</span>
+<button class="bg-primary text-white px-4 py-2 rounded-button hover:bg-opacity-90 transition-colors flex items-center gap-2 whitespace-nowrap">
+<i class="ri-shopping-cart-line"></i> Add to Cart
+</button>
+</div>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="product-card bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100">
+<div class="h-64 overflow-hidden bg-[#F5F1E8]">
+<img src="https://readdy.ai/api/search-image?query=Modern%20copper%20vacuum%20insulated%20water%20bottle%20with%20a%20matte%20finish%20and%20wooden%20cap%20on%20a%20light%20beige%20background.%20The%20bottle%20has%20a%20sleek%2C%20minimalist%20design%20with%20subtle%20eco-friendly%20branding.%20High-quality%20product%20photography%20with%20soft%20shadows%20and%20clean%20composition.&width=600&height=600&seq=1003&orientation=squarish" alt="Copper Thermal Flask" class="w-full h-full object-contain object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">Copper Thermal Flask</h3>
+<p class="text-gray-600 mb-4">Triple-layer insulation with copper lining for superior temperature retention.</p>
+<div class="flex justify-between items-center">
+<span class="text-lg font-bold">$39.99</span>
+<button class="bg-primary text-white px-4 py-2 rounded-button hover:bg-opacity-90 transition-colors flex items-center gap-2 whitespace-nowrap">
+<i class="ri-shopping-cart-line"></i> Add to Cart
+</button>
+</div>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="product-card bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100">
+<div class="h-64 overflow-hidden bg-[#F5F1E8]">
+<img src="https://readdy.ai/api/search-image?query=Lightweight%20bamboo%20and%20stainless%20steel%20water%20bottle%20with%20infuser%20on%20a%20light%20beige%20background.%20The%20bottle%20has%20a%20natural%20bamboo%20exterior%20with%20stainless%20steel%20interior%20and%20a%20built-in%20infuser%20for%20fruit%20or%20tea.%20High-quality%20product%20photography%20with%20soft%20shadows%20and%20clean%20composition.&width=600&height=600&seq=1004&orientation=squarish" alt="Bamboo Infuser Bottle" class="w-full h-full object-contain object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">Bamboo Infuser Bottle</h3>
+<p class="text-gray-600 mb-4">Bamboo exterior with stainless steel interior and removable infuser basket.</p>
+<div class="flex justify-between items-center">
+<span class="text-lg font-bold">$32.99</span>
+<button class="bg-primary text-white px-4 py-2 rounded-button hover:bg-opacity-90 transition-colors flex items-center gap-2 whitespace-nowrap">
+<i class="ri-shopping-cart-line"></i> Add to Cart
+</button>
+</div>
+</div>
+</div>
+<!-- Product 5 -->
+<div class="product-card bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100">
+<div class="h-64 overflow-hidden bg-[#F5F1E8]">
+<img src="https://readdy.ai/api/search-image?query=Collapsible%20silicone%20water%20bottle%20in%20teal%20color%20with%20carabiner%20clip%20on%20a%20light%20beige%20background.%20The%20bottle%20has%20a%20modern%2C%20practical%20design%20that%20can%20be%20folded%20when%20empty%20to%20save%20space.%20High-quality%20product%20photography%20with%20soft%20shadows%20and%20clean%20composition.&width=600&height=600&seq=1005&orientation=squarish" alt="Nomad Collapsible Bottle" class="w-full h-full object-contain object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">Nomad Collapsible Bottle</h3>
+<p class="text-gray-600 mb-4">Food-grade silicone that collapses when empty for ultra-portable hydration.</p>
+<div class="flex justify-between items-center">
+<span class="text-lg font-bold">$24.99</span>
+<button class="bg-primary text-white px-4 py-2 rounded-button hover:bg-opacity-90 transition-colors flex items-center gap-2 whitespace-nowrap">
+<i class="ri-shopping-cart-line"></i> Add to Cart
+</button>
+</div>
+</div>
+</div>
+<!-- Product 6 -->
+<div class="product-card bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100">
+<div class="h-64 overflow-hidden bg-[#F5F1E8]">
+<img src="https://readdy.ai/api/search-image?query=Kids%20eco-friendly%20water%20bottle%20with%20fun%20nature-inspired%20patterns%20on%20a%20light%20beige%20background.%20The%20bottle%20is%20made%20from%20safe%2C%20BPA-free%20materials%20with%20an%20easy-to-use%20spout%20lid.%20Colorful%20but%20tasteful%20design%20with%20woodland%20animals.%20High-quality%20product%20photography%20with%20soft%20shadows%20and%20clean%20composition.&width=600&height=600&seq=1006&orientation=squarish" alt="Little Explorer Kids Bottle" class="w-full h-full object-contain object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">Little Explorer Kids Bottle</h3>
+<p class="text-gray-600 mb-4">BPA-free with easy-sip straw and fun nature-inspired patterns for children.</p>
+<div class="flex justify-between items-center">
+<span class="text-lg font-bold">$19.99</span>
+<button class="bg-primary text-white px-4 py-2 rounded-button hover:bg-opacity-90 transition-colors flex items-center gap-2 whitespace-nowrap">
+<i class="ri-shopping-cart-line"></i> Add to Cart
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<a href="#" class="inline-block border-2 border-primary text-primary px-8 py-3 rounded-button font-medium hover:bg-primary hover:bg-opacity-10 transition-colors whitespace-nowrap">View All Products</a>
+</div>
+</div>
+</section>
+<!-- Sustainability Impact Section -->
+<section class="py-16 bg-[#F5F1E8]">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-3">Our Environmental Impact</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Every bottle you purchase helps reduce plastic waste and supports our conservation initiatives.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="bg-white rounded-lg p-8 shadow-sm">
+<div id="impactChart" class="h-80"></div>
+</div>
+<div>
+<h3 class="text-2xl font-semibold mb-6">How Your Purchase Makes a Difference</h3>
+<div class="space-y-8">
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-20 rounded-full text-primary mr-4 flex-shrink-0">
+<i class="ri-recycle-line ri-lg"></i>
+</div>
+<div>
+<h4 class="text-lg font-medium mb-2">Plastic Reduction</h4>
+<p class="text-gray-600">Each reusable bottle prevents approximately 167 single-use plastic bottles from entering landfills and oceans annually.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-20 rounded-full text-primary mr-4 flex-shrink-0">
+<i class="ri-plant-line ri-lg"></i>
+</div>
+<div>
+<h4 class="text-lg font-medium mb-2">Reforestation Efforts</h4>
+<p class="text-gray-600">We plant one tree for every 10 bottles sold, with over 25,000 trees planted since our founding in 2020.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-20 rounded-full text-primary mr-4 flex-shrink-0">
+<i class="ri-water-flash-line ri-lg"></i>
+</div>
+<div>
+<h4 class="text-lg font-medium mb-2">Clean Water Initiatives</h4>
+<p class="text-gray-600">5% of our profits support clean water projects in communities around the world, providing safe drinking water to those in need.</p>
+</div>
+</div>
+</div>
+<div class="mt-8">
+<a href="#" class="inline-block bg-secondary text-white px-8 py-3 rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Learn More About Our Impact</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Customer Testimonials -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-3">What Our Customers Say</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Join thousands of satisfied customers who have made the switch to sustainable hydration.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="testimonial-card bg-white rounded-lg p-6 shadow-sm border border-gray-100">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20smiling%20woman%20in%20her%2030s%20with%20shoulder-length%20brown%20hair%2C%20natural%20makeup%2C%20and%20a%20friendly%20expression%20against%20a%20neutral%20background.%20The%20image%20is%20well-lit%20with%20soft%20lighting%20and%20shows%20just%20her%20head%20and%20shoulders.&width=100&height=100&seq=2001&orientation=squarish" alt="Emily Richardson" class="w-full h-full object-cover">
+</div>
+<div>
+<h4 class="font-medium">Emily Richardson</h4>
+<p class="text-sm text-gray-500">Portland, OR</p>
+</div>
+</div>
+<div class="flex text-yellow-400 mb-3">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<p class="text-gray-600">"I've tried many reusable bottles over the years, but this one truly stands out. The insulation is incredible - my water stays cold all day, even in summer heat. Plus, I love knowing I'm making a difference with each purchase."</p>
+</div>
+<!-- Testimonial 2 -->
+<div class="testimonial-card bg-white rounded-lg p-6 shadow-sm border border-gray-100">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20smiling%20man%20in%20his%2040s%20with%20short%20dark%20hair%20and%20glasses%2C%20wearing%20a%20casual%20button-up%20shirt%20against%20a%20neutral%20background.%20The%20image%20is%20well-lit%20with%20soft%20lighting%20and%20shows%20just%20his%20head%20and%20shoulders.&width=100&height=100&seq=2002&orientation=squarish" alt="Marcus Johnson" class="w-full h-full object-cover">
+</div>
+<div>
+<h4 class="font-medium">Marcus Johnson</h4>
+<p class="text-sm text-gray-500">Austin, TX</p>
+</div>
+</div>
+<div class="flex text-yellow-400 mb-3">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<p class="text-gray-600">"As someone who hikes regularly, the durability of these bottles is impressive. I've accidentally dropped mine multiple times on rocky terrain, and it still looks brand new. The bamboo cap is a beautiful touch that connects me to nature."</p>
+</div>
+<!-- Testimonial 3 -->
+<div class="testimonial-card bg-white rounded-lg p-6 shadow-sm border border-gray-100">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20smiling%20woman%20in%20her%2020s%20with%20curly%20black%20hair%2C%20natural%20makeup%2C%20and%20a%20friendly%20expression%20against%20a%20neutral%20background.%20The%20image%20is%20well-lit%20with%20soft%20lighting%20and%20shows%20just%20her%20head%20and%20shoulders.&width=100&height=100&seq=2003&orientation=squarish" alt="Sophia Chen" class="w-full h-full object-cover">
+</div>
+<div>
+<h4 class="font-medium">Sophia Chen</h4>
+<p class="text-sm text-gray-500">Chicago, IL</p>
+</div>
+</div>
+<div class="flex text-yellow-400 mb-3">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-half-fill"></i>
+</div>
+<p class="text-gray-600">"I bought bottles for my entire family, and we're all obsessed! My kids love the colorful designs, and I appreciate that they're made from safe materials. The leak-proof design has saved my bag from water damage countless times."</p>
+</div>
+</div>
+<div class="text-center mt-12">
+<a href="#" class="inline-block border-2 border-primary text-primary px-8 py-3 rounded-button font-medium hover:bg-primary hover:bg-opacity-10 transition-colors whitespace-nowrap">Read More Reviews</a>
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="py-16 bg-[#F5F1E8]">
+<div class="container mx-auto px-4">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="text-3xl font-bold mb-3">Join Our Mission</h2>
+<p class="text-gray-600 mb-8">Subscribe to receive updates on new products, sustainability tips, and exclusive offers.</p>
+<div class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+<input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-button border-none focus:outline-none focus:ring-2 focus:ring-primary shadow-sm">
+<button class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Subscribe</button>
+</div>
+<div class="mt-8 flex items-center justify-center">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-20 rounded-full text-primary mr-4">
+<i class="ri-water-flash-line ri-lg"></i>
+</div>
+<p class="text-gray-700 font-medium">One Bottle = 167 Plastic Bottles Saved Annually</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-white pt-16 pb-8 border-t border-gray-100">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<!-- Company Info -->
+<div>
+<a href="#" class="text-3xl font-['Pacifico'] text-primary mb-6 inline-block">logo</a>
+<p class="text-gray-600 mb-6">We're on a mission to eliminate single-use plastic bottles while providing premium hydration solutions that last a lifetime.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors">
+<i class="ri-twitter-x-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors">
+<i class="ri-pinterest-line"></i>
+</a>
+</div>
+</div>
+<!-- Quick Links -->
+<div>
+<h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Shop All</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">About Us</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Sustainability</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Our Impact</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Blog</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">FAQ</a></li>
+</ul>
+</div>
+<!-- Customer Service -->
+<div>
+<h4 class="text-lg font-semibold mb-6">Customer Service</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Contact Us</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Shipping Policy</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Returns & Exchanges</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Warranty Information</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Privacy Policy</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Terms of Service</a></li>
+</ul>
+</div>
+<!-- Contact Info -->
+<div>
+<h4 class="text-lg font-semibold mb-6">Contact Us</h4>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-1">
+<i class="ri-map-pin-line"></i>
+</div>
+<span class="text-gray-600">123 Eco Way, Portland, OR 97201</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-1">
+<i class="ri-phone-line"></i>
+</div>
+<span class="text-gray-600">(503) 555-0123</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-1">
+<i class="ri-mail-line"></i>
+</div>
+<span class="text-gray-600">hello@ecobottle.com</span>
+</li>
+</ul>
+<h4 class="text-lg font-semibold mt-8 mb-4">We Accept</h4>
+<div class="flex space-x-3">
+<div class="w-10 h-6 flex items-center justify-center text-gray-600">
+<i class="ri-visa-fill ri-lg"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center text-gray-600">
+<i class="ri-mastercard-fill ri-lg"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center text-gray-600">
+<i class="ri-paypal-fill ri-lg"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center text-gray-600">
+<i class="ri-apple-fill ri-lg"></i>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-gray-100 text-center text-gray-500 text-sm">
+<p>&copy; 2025 EcoBottle. All rights reserved. Designed Biyejid Hosen</p>
+</div>
+</div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Initialize Impact Chart
+const impactChart = document.getElementById('impactChart');
+if (impactChart) {
+const chart = echarts.init(impactChart);
+const option = {
+animation: false,
+tooltip: {
+trigger: 'axis',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+borderColor: '#F5F1E8',
+textStyle: {
+color: '#1f2937'
+}
+},
+legend: {
+data: ['Plastic Bottles Saved', 'Trees Planted', 'Clean Water (gallons)'],
+bottom: 0
+},
+grid: {
+left: '3%',
+right: '4%',
+bottom: '15%',
+top: '3%',
+containLabel: true
+},
+xAxis: {
+type: 'category',
+boundaryGap: false,
+data: ['2020', '2021', '2022', '2023', '2024', '2025'],
+axisLine: {
+lineStyle: {
+color: '#ddd'
+}
+}
+},
+yAxis: {
+type: 'value',
+axisLine: {
+show: false
+},
+axisLabel: {
+color: '#666'
+},
+splitLine: {
+lineStyle: {
+color: '#f0f0f0'
+}
+}
+},
+series: [
+{
+name: 'Plastic Bottles Saved',
+type: 'line',
+stack: 'Total',
+data: [12000, 45000, 98000, 167000, 256000, 350000],
+smooth: true,
+symbol: 'none',
+lineStyle: {
+width: 3,
+color: 'rgba(87, 181, 231, 1)'
+},
+areaStyle: {
+color: {
+type: 'linear',
+x: 0,
+y: 0,
+x2: 0,
+y2: 1,
+colorStops: [{
+offset: 0, color: 'rgba(87, 181, 231, 0.2)'
+}, {
+offset: 1, color: 'rgba(87, 181, 231, 0.05)'
+}]
+}
+}
+},
+{
+name: 'Trees Planted',
+type: 'line',
+stack: 'Total',
+data: [1200, 4500, 9800, 16700, 25600, 35000],
+smooth: true,
+symbol: 'none',
+lineStyle: {
+width: 3,
+color: 'rgba(141, 211, 199, 1)'
+},
+areaStyle: {
+color: {
+type: 'linear',
+x: 0,
+y: 0,
+x2: 0,
+y2: 1,
+colorStops: [{
+offset: 0, color: 'rgba(141, 211, 199, 0.2)'
+}, {
+offset: 1, color: 'rgba(141, 211, 199, 0.05)'
+}]
+}
+}
+},
+{
+name: 'Clean Water (gallons)',
+type: 'line',
+stack: 'Total',
+data: [5000, 20000, 50000, 100000, 180000, 250000],
+smooth: true,
+symbol: 'none',
+lineStyle: {
+width: 3,
+color: 'rgba(251, 191, 114, 1)'
+},
+areaStyle: {
+color: {
+type: 'linear',
+x: 0,
+y: 0,
+x2: 0,
+y2: 1,
+colorStops: [{
+offset: 0, color: 'rgba(251, 191, 114, 0.2)'
+}, {
+offset: 1, color: 'rgba(251, 191, 114, 0.05)'
+}]
+}
+}
+}
+]
+};
+chart.setOption(option);
+window.addEventListener('resize', function() {
+chart.resize();
+});
+}
+});
+</script>
+</body>
+</html>

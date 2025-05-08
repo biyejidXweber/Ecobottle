@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Impact | EcoBottle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Pacifico&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#7C9082',secondary:'#2C4A3B'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+    font-family: 'Inter', sans-serif;
+    color: #333333;
+    background-color: #FAFAFA;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+}
+.hero-section {
+    background-image: url('https://readdy.ai/api/search-image?query=Beautiful%2520natural%2520landscape%2520with%2520lush%2520green%2520forest%252C%2520clean%2520flowing%2520river%252C%2520and%2520mountains%2520in%2520the%2520background.%2520The%2520scene%2520shows%2520a%2520pristine%2520ecosystem%2520with%2520clear%2520blue%2520sky%2520and%2520sunlight%2520filtering%2520through%2520trees.%2520The%2520image%2520has%2520a%2520serene%252C%2520hopeful%2520quality%2520that%2520represents%2520environmental%2520conservation%2520and%2520sustainability.%2520The%2520left%2520side%2520has%2520a%2520gradient%2520that%2520will%2520blend%2520perfectly%2520with%2520white%2520text%2520overlay.&width=1920&height=800&seq=54321&orientation=landscape');
+    background-size: cover;
+    background-position: center;
+}
+.hero-content {
+    background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0) 100%);
+}
+.timeline-container::-webkit-scrollbar {
+    height: 8px;
+}
+.timeline-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+.timeline-container::-webkit-scrollbar-thumb {
+    background: #7C9082;
+    border-radius: 10px;
+}
+.timeline-container::-webkit-scrollbar-thumb:hover {
+    background: #2C4A3B;
+}
+.impact-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.impact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+.partner-card {
+    transition: transform 0.3s ease;
+}
+.partner-card:hover {
+    transform: scale(1.03);
+}
+.custom-checkbox {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: 2px solid #7C9082;
+    border-radius: 4px;
+}
+.custom-checkbox input:checked ~ .checkmark {
+    background-color: #7C9082;
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.custom-checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+.custom-checkbox .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+.progress-bar {
+    position: relative;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #E5E7EB;
+    overflow: hidden;
+}
+.progress-bar-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #7C9082;
+    border-radius: 4px;
+    transition: width 1s ease;
+}
+</style>
+</head>
+<body>
+<!-- Header Navigation -->
+<header class="sticky top-0 z-50 bg-white shadow-sm">
+<div class="container mx-auto px-4 py-4 flex items-center justify-between">
+<a href="index.html" class="text-3xl font-['Pacifico'] text-primary">EcoBottle</a>
+<nav class="hidden md:flex space-x-8">
+<a href="index.html" class="font-medium text-gray-800 hover:text-primary transition-colors">Home</a>
+<a href="All-Products-Shop-Page.html" class="font-medium text-gray-800 hover:text-primary transition-colors">Shop</a>
+<a href="Detailed-Impact-Initiatives.html" class="font-medium text-primary transition-colors">Our Impact</a>
+<a href="#" class="font-medium text-gray-800 hover:text-primary transition-colors">About Us</a>
+<a href="Contact-Us.html" class="font-medium text-gray-800 hover:text-primary transition-colors">Contact</a>
+</nav>
+<div class="flex items-center space-x-6">
+<div class="relative">
+<input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+<div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+<i class="ri-search-line"></i>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary transition-colors">
+<i class="ri-user-line ri-lg"></i>
+</a>
+<div class="relative">
+<a href="#" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary transition-colors">
+<i class="ri-shopping-cart-line ri-lg"></i>
+</a>
+<span class="absolute -top-1 -right-1 bg-primary text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">3</span>
+</div>
+</div>
+<button class="block md:hidden w-10 h-10 flex items-center justify-center">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero-section relative h-[500px] w-full">
+<div class="absolute inset-0 hero-content flex items-center">
+<div class="container mx-auto px-4 md:px-8 w-full">
+<div class="max-w-2xl">
+<h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">Making Waves in Sustainability</h1>
+<p class="text-lg mb-8 text-gray-700">Our commitment to environmental stewardship goes beyond creating eco-friendly products. Discover how every purchase contributes to a healthier planet.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a href="#impact-metrics" class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-opacity-90 transition-colors text-center whitespace-nowrap">See Our Impact</a>
+<a href="#" class="border-2 border-primary text-primary px-8 py-3 rounded-button font-medium hover:bg-primary hover:bg-opacity-10 transition-colors text-center whitespace-nowrap">Download Impact Report</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Impact Metrics Dashboard -->
+<section id="impact-metrics" class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-3">Our Environmental Impact</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Through our sustainable products and initiatives, we've made measurable progress in protecting our planet's resources.</p>
+</div>
+
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+<!-- Plastic Reduction -->
+<div class="impact-card bg-white rounded-lg p-8 shadow-sm border border-gray-100">
+<div class="flex items-center justify-center w-16 h-16 bg-primary bg-opacity-10 rounded-full mb-6 mx-auto">
+<i class="ri-recycle-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-2xl font-bold text-center mb-2">1.2M+</h3>
+<p class="text-lg font-medium text-center mb-4">Plastic Bottles Saved</p>
+<p class="text-gray-600 text-center mb-6">Each reusable bottle prevents approximately 167 single-use plastic bottles from entering landfills and oceans annually.</p>
+<div class="progress-bar">
+<div class="progress-bar-fill" style="width: 75%;"></div>
+</div>
+<p class="text-sm text-gray-500 mt-2 text-center">75% toward 2025 goal</p>
+</div>
+
+<!-- Reforestation -->
+<div class="impact-card bg-white rounded-lg p-8 shadow-sm border border-gray-100">
+<div class="flex items-center justify-center w-16 h-16 bg-primary bg-opacity-10 rounded-full mb-6 mx-auto">
+<i class="ri-plant-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-2xl font-bold text-center mb-2">52,000+</h3>
+<p class="text-lg font-medium text-center mb-4">Trees Planted</p>
+<p class="text-gray-600 text-center mb-6">We plant one tree for every 10 bottles sold, with over 52,000 trees planted since our founding in 2020.</p>
+<div class="progress-bar">
+<div class="progress-bar-fill" style="width: 65%;"></div>
+</div>
+<p class="text-sm text-gray-500 mt-2 text-center">65% toward 2025 goal</p>
+</div>
+
+<!-- Clean Water -->
+<div class="impact-card bg-white rounded-lg p-8 shadow-sm border border-gray-100">
+<div class="flex items-center justify-center w-16 h-16 bg-primary bg-opacity-10 rounded-full mb-6 mx-auto">
+<i class="ri-water-flash-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-2xl font-bold text-center mb-2">485,000+</h3>
+<p class="text-lg font-medium text-center mb-4">Gallons of Clean Water</p>
+<p class="text-gray-600 text-center mb-6">5% of our profits support clean water projects in communities around the world, providing safe drinking water to those in need.</p>
+<div class="progress-bar">
+<div class="progress-bar-fill" style="width: 80%;"></div>
+</div>
+<p class="text-sm text-gray-500 mt-2 text-center">80% toward 2025 goal</p>
+</div>
+</div>
+
+<!-- Detailed Impact Visualization -->
+<div class="bg-white rounded-lg shadow-sm border border-gray-100 p-6 mb-8">
+<div class="flex flex-col md:flex-row justify-between items-center mb-6">
+<h3 class="text-xl font-semibold">Impact Growth Over Time</h3>
+<div class="flex space-x-2 mt-4 md:mt-0">
+<button class="px-4 py-2 text-sm bg-gray-100 hover:bg-gray-200 rounded-button text-gray-700 whitespace-nowrap active" id="yearBtn">Yearly</button>
+<button class="px-4 py-2 text-sm bg-gray-100 hover:bg-gray-200 rounded-button text-gray-700 whitespace-nowrap" id="quarterBtn">Quarterly</button>
+</div>
+</div>
+<div id="impactChart" class="h-[400px] w-full"></div>
+</div>
+
+<!-- Carbon Footprint Reduction -->
+<div class="bg-white rounded-lg shadow-sm border border-gray-100 p-8">
+<h3 class="text-xl font-semibold mb-6">Carbon Footprint Reduction</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<div id="carbonChart" class="h-[300px] w-full"></div>
+</div>
+<div class="flex flex-col justify-center">
+<h4 class="text-lg font-medium mb-4">Our Carbon Reduction Strategy</h4>
+<ul class="space-y-4">
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary bg-opacity-20 rounded-full text-primary mr-3 flex-shrink-0 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<p class="text-gray-700">Sustainable manufacturing processes reducing emissions by 45% compared to traditional methods</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary bg-opacity-20 rounded-full text-primary mr-3 flex-shrink-0 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<p class="text-gray-700">Eco-friendly packaging made from 100% recycled and biodegradable materials</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary bg-opacity-20 rounded-full text-primary mr-3 flex-shrink-0 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<p class="text-gray-700">Carbon offset programs for all shipping and operational activities</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary bg-opacity-20 rounded-full text-primary mr-3 flex-shrink-0 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<p class="text-gray-700">Solar-powered facilities reducing our reliance on fossil fuels</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Impact Stories -->
+<section class="py-16 bg-[#F5F1E8]">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-3">Impact Stories</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Real stories of how our sustainable products and initiatives are making a difference around the world.</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Story 1 -->
+<div class="impact-card bg-white rounded-lg overflow-hidden shadow-sm">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Before%2520and%2520after%2520image%2520of%2520a%2520beach%2520cleanup%2520project.%2520The%2520left%2520side%2520shows%2520a%2520beach%2520littered%2520with%2520plastic%2520bottles%2520and%2520waste%252C%2520while%2520the%2520right%2520side%2520shows%2520the%2520same%2520beach%2520clean%2520and%2520pristine%2520after%2520volunteers%2520have%2520removed%2520the%2520trash.%2520The%2520image%2520has%2520a%2520hopeful%252C%2520transformative%2520quality%2520with%2520natural%2520lighting.&width=600&height=400&seq=10001&orientation=landscape" alt="Beach Cleanup Project" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex items-center mb-4">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-20 rounded-full text-primary mr-3 flex-shrink-0">
+<i class="ri-earth-line"></i>
+</div>
+<h3 class="text-lg font-semibold">Pacific Coast Cleanup</h3>
+</div>
+<p class="text-gray-600 mb-4">Our partnership with coastal communities removed over 5,000 pounds of plastic waste from beaches in 2024, protecting marine ecosystems and wildlife.</p>
+<div class="flex justify-between items-center text-sm text-gray-500">
+<span>June 2024</span>
+<span>California, USA</span>
+</div>
+</div>
+</div>
+
+<!-- Story 2 -->
+<div class="impact-card bg-white rounded-lg overflow-hidden shadow-sm">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Before%2520and%2520after%2520image%2520of%2520a%2520reforestation%2520project.%2520The%2520left%2520side%2520shows%2520a%2520barren%252C%2520deforested%2520hillside%252C%2520while%2520the%2520right%2520side%2520shows%2520the%2520same%2520area%2520with%2520young%2520trees%2520growing%2520and%2520beginning%2520to%2520restore%2520the%2520ecosystem.%2520The%2520image%2520has%2520a%2520hopeful%252C%2520transformative%2520quality%2520with%2520natural%2520lighting.&width=600&height=400&seq=10002&orientation=landscape" alt="Reforestation Project" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex items-center mb-4">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-20 rounded-full text-primary mr-3 flex-shrink-0">
+<i class="ri-plant-line"></i>
+</div>
+<h3 class="text-lg font-semibold">Amazon Reforestation</h3>
+</div>
+<p class="text-gray-600 mb-4">Our reforestation initiative has restored 120 acres of rainforest in Brazil, creating habitat for endangered species and supporting local communities.</p>
+<div class="flex justify-between items-center text-sm text-gray-500">
+<span>March 2024</span>
+<span>Amazon Basin, Brazil</span>
+</div>
+</div>
+</div>
+
+<!-- Story 3 -->
+<div class="impact-card bg-white rounded-lg overflow-hidden shadow-sm">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Before%2520and%2520after%2520image%2520of%2520a%2520clean%2520water%2520project.%2520The%2520left%2520side%2520shows%2520people%2520collecting%2520water%2520from%2520a%2520muddy%252C%2520contaminated%2520source%252C%2520while%2520the%2520right%2520side%2520shows%2520the%2520same%2520community%2520with%2520access%2520to%2520clean%2520water%2520from%2520a%2520new%2520well%2520or%2520filtration%2520system.%2520Children%2520and%2520adults%2520are%2520smiling%2520as%2520they%2520collect%2520clean%2520water.%2520The%2520image%2520has%2520a%2520hopeful%252C%2520transformative%2520quality.&width=600&height=400&seq=10003&orientation=landscape" alt="Clean Water Project" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex items-center mb-4">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-20 rounded-full text-primary mr-3 flex-shrink-0">
+<i class="ri-water-flash-line"></i>
+</div>
+<h3 class="text-lg font-semibold">Clean Water Initiative</h3>
+</div>
+<p class="text-gray-600 mb-4">Our clean water project in Kenya has provided access to safe drinking water for over 15,000 people, reducing waterborne diseases by 65%.</p>
+<div class="flex justify-between items-center text-sm text-gray-500">
+<span>January 2024</span>
+<span>Nairobi, Kenya</span>
+</div>
+</div>
+</div>
+</div>
+
+<div class="text-center mt-10">
+<a href="#" class="inline-block border-2 border-primary text-primary px-8 py-3 rounded-button font-medium hover:bg-primary hover:bg-opacity-10 transition-colors whitespace-nowrap">View All Impact Stories</a>
+</div>
+</div>
+</section>
+
+<!-- Partner Organizations -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-3">Our Sustainability Partners</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">We collaborate with leading environmental organizations to maximize our positive impact on the planet.</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Partner 1 -->
+<div class="partner-card bg-white rounded-lg p-6 shadow-sm border border-gray-100">
+<div class="flex items-center mb-6">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-100 rounded-lg mr-4">
+<i class="ri-earth-line ri-2x text-blue-600"></i>
+</div>
+<h3 class="text-xl font-semibold">Ocean Cleanup Alliance</h3>
+</div>
+<p class="text-gray-600 mb-4">Working together to remove plastic waste from oceans and develop innovative recycling solutions for marine debris.</p>
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium text-primary">Partner since 2020</span>
+<a href="#" class="text-sm text-gray-500 hover:text-primary">Learn more →</a>
+</div>
+</div>
+
+<!-- Partner 2 -->
+<div class="partner-card bg-white rounded-lg p-6 shadow-sm border border-gray-100">
+<div class="flex items-center mb-6">
+<div class="w-16 h-16 flex items-center justify-center bg-green-100 rounded-lg mr-4">
+<i class="ri-plant-line ri-2x text-green-600"></i>
+</div>
+<h3 class="text-xl font-semibold">Global Reforestation Fund</h3>
+</div>
+<p class="text-gray-600 mb-4">Collaborating on large-scale reforestation projects in critical ecosystems around the world to combat climate change.</p>
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium text-primary">Partner since 2021</span>
+<a href="#" class="text-sm text-gray-500 hover:text-primary">Learn more →</a>
+</div>
+</div>
+
+<!-- Partner 3 -->
+<div class="partner-card bg-white rounded-lg p-6 shadow-sm border border-gray-100">
+<div class="flex items-center mb-6">
+<div class="w-16 h-16 flex items-center justify-center bg-cyan-100 rounded-lg mr-4">
+<i class="ri-water-flash-line ri-2x text-cyan-600"></i>
+</div>
+<h3 class="text-xl font-semibold">Clean Water Initiative</h3>
+</div>
+<p class="text-gray-600 mb-4">Supporting water purification and infrastructure projects in developing regions to provide safe drinking water.</p>
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium text-primary">Partner since 2022</span>
+<a href="#" class="text-sm text-gray-500 hover:text-primary">Learn more →</a>
+</div>
+</div>
+
+<!-- Partner 4 -->
+<div class="partner-card bg-white rounded-lg p-6 shadow-sm border border-gray-100">
+<div class="flex items-center mb-6">
+<div class="w-16 h-16 flex items-center justify-center bg-amber-100 rounded-lg mr-4">
+<i class="ri-recycle-line ri-2x text-amber-600"></i>
+</div>
+<h3 class="text-xl font-semibold">Circular Economy Network</h3>
+</div>
+<p class="text-gray-600 mb-4">Advancing sustainable product design and manufacturing processes to eliminate waste and promote material reuse.</p>
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium text-primary">Partner since 2022</span>
+<a href="#" class="text-sm text-gray-500 hover:text-primary">Learn more →</a>
+</div>
+</div>
+
+<!-- Partner 5 -->
+<div class="partner-card bg-white rounded-lg p-6 shadow-sm border border-gray-100">
+<div class="flex items-center mb-6">
+<div class="w-16 h-16 flex items-center justify-center bg-rose-100 rounded-lg mr-4">
+<i class="ri-community-line ri-2x text-rose-600"></i>
+</div>
+<h3 class="text-xl font-semibold">Community Sustainability Coalition</h3>
+</div>
+<p class="text-gray-600 mb-4">Empowering local communities to implement sustainable practices and reduce environmental impact through education.</p>
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium text-primary">Partner since 2023</span>
+<a href="#" class="text-sm text-gray-500 hover:text-primary">Learn more →</a>
+</div>
+</div>
+
+<!-- Partner 6 -->
+<div class="partner-card bg-white rounded-lg p-6 shadow-sm border border-gray-100">
+<div class="flex items-center mb-6">
+<div class="w-16 h-16 flex items-center justify-center bg-indigo-100 rounded-lg mr-4">
+<i class="ri-flask-line ri-2x text-indigo-600"></i>
+</div>
+<h3 class="text-xl font-semibold">Sustainable Materials Research</h3>
+</div>
+<p class="text-gray-600 mb-4">Researching and developing next-generation eco-friendly materials for consumer products and packaging solutions.</p>
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium text-primary">Partner since 2023</span>
+<a href="#" class="text-sm text-gray-500 hover:text-primary">Learn more →</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Sustainability Certifications -->
+<section class="py-16 bg-[#F5F1E8]">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-3">Our Sustainability Certifications</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">We're committed to meeting the highest standards of environmental responsibility and transparency.</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Certification 1 -->
+<div class="bg-white rounded-lg p-6 shadow-sm">
+<div class="flex items-center justify-center mb-4">
+<div class="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full">
+<i class="ri-award-line ri-2x text-green-600"></i>
+</div>
+</div>
+<h3 class="text-lg font-semibold text-center mb-2">B Corp Certified</h3>
+<p class="text-gray-600 text-center text-sm mb-4">Meeting the highest standards of verified social and environmental performance, transparency, and accountability.</p>
+<div class="text-center">
+<span class="inline-block px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">Verified</span>
+</div>
+</div>
+
+<!-- Certification 2 -->
+<div class="bg-white rounded-lg p-6 shadow-sm">
+<div class="flex items-center justify-center mb-4">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-100 rounded-full">
+<i class="ri-recycle-line ri-2x text-blue-600"></i>
+</div>
+</div>
+<h3 class="text-lg font-semibold text-center mb-2">Cradle to Cradle</h3>
+<p class="text-gray-600 text-center text-sm mb-4">Products designed for circularity, with safe materials that can be continuously recycled or composted.</p>
+<div class="text-center">
+<span class="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">Gold Level</span>
+</div>
+</div>
+
+<!-- Certification 3 -->
+<div class="bg-white rounded-lg p-6 shadow-sm">
+<div class="flex items-center justify-center mb-4">
+<div class="w-16 h-16 flex items-center justify-center bg-amber-100 rounded-full">
+<i class="ri-leaf-line ri-2x text-amber-600"></i>
+</div>
+</div>
+<h3 class="text-lg font-semibold text-center mb-2">Climate Neutral</h3>
+<p class="text-gray-600 text-center text-sm mb-4">Measuring, reducing, and offsetting all carbon emissions from our products and operations.</p>
+<div class="text-center">
+<span class="inline-block px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-xs font-medium">Certified</span>
+</div>
+</div>
+
+<!-- Certification 4 -->
+<div class="bg-white rounded-lg p-6 shadow-sm">
+<div class="flex items-center justify-center mb-4">
+<div class="w-16 h-16 flex items-center justify-center bg-purple-100 rounded-full">
+<i class="ri-water-flash-line ri-2x text-purple-600"></i>
+</div>
+</div>
+<h3 class="text-lg font-semibold text-center mb-2">Water Stewardship</h3>
+<p class="text-gray-600 text-center text-sm mb-4">Responsible management of water resources throughout our supply chain and manufacturing processes.</p>
+<div class="text-center">
+<span class="inline-block px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Platinum</span>
+</div>
+</div>
+</div>
+
+<div class="mt-12 bg-white rounded-lg p-8 shadow-sm">
+<h3 class="text-xl font-semibold mb-6">Certification Progress</h3>
+<div class="space-y-6">
+<!-- In Progress Certification 1 -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<div class="flex items-center">
+<div class="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full mr-3">
+<i class="ri-shield-check-line text-gray-600"></i>
+</div>
+<span class="font-medium">Global Recycled Standard</span>
+</div>
+<span class="text-sm text-gray-500">75% Complete</span>
+</div>
+<div class="progress-bar">
+<div class="progress-bar-fill" style="width: 75%;"></div>
+</div>
+</div>
+
+<!-- In Progress Certification 2 -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<div class="flex items-center">
+<div class="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full mr-3">
+<i class="ri-earth-line text-gray-600"></i>
+</div>
+<span class="font-medium">Zero Waste Certification</span>
+</div>
+<span class="text-sm text-gray-500">90% Complete</span>
+</div>
+<div class="progress-bar">
+<div class="progress-bar-fill" style="width: 90%;"></div>
+</div>
+</div>
+
+<!-- In Progress Certification 3 -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<div class="flex items-center">
+<div class="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full mr-3">
+<i class="ri-plant-line text-gray-600"></i>
+</div>
+<span class="font-medium">Forest Stewardship Council</span>
+</div>
+<span class="text-sm text-gray-500">60% Complete</span>
+</div>
+<div class="progress-bar">
+<div class="progress-bar-fill" style="width: 60%;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Environmental Timeline -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-3">Our Sustainability Journey</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">From our founding to today, we've been committed to making a positive environmental impact.</p>
+</div>
+
+<div class="relative mb-8">
+<div class="absolute left-0 right-0 h-1 bg-gray-200 top-1/2 transform -translate-y-1/2"></div>
+<div class="timeline-container relative overflow-x-auto pb-4">
+<div class="inline-flex space-x-16 px-4" style="min-width: max-content;">
+<!-- 2020 -->
+<div class="relative w-64">
+<div class="absolute left-1/2 -translate-x-1/2 -top-6 w-4 h-4 bg-primary rounded-full"></div>
+<div class="pt-8 text-center">
+<span class="inline-block px-4 py-1 bg-primary text-white rounded-full text-sm font-medium mb-3">2020</span>
+<h3 class="text-lg font-semibold mb-2">Company Founded</h3>
+<p class="text-gray-600 text-sm">Launched with a mission to reduce single-use plastic waste through sustainable alternatives.</p>
+</div>
+</div>
+
+<!-- 2021 -->
+<div class="relative w-64">
+<div class="absolute left-1/2 -translate-x-1/2 -top-6 w-4 h-4 bg-primary rounded-full"></div>
+<div class="pt-8 text-center">
+<span class="inline-block px-4 py-1 bg-primary text-white rounded-full text-sm font-medium mb-3">2021</span>
+<h3 class="text-lg font-semibold mb-2">First Reforestation Project</h3>
+<p class="text-gray-600 text-sm">Planted 5,000 trees in partnership with Global Reforestation Fund in Brazil.</p>
+</div>
+</div>
+
+<!-- 2022 -->
+<div class="relative w-64">
+<div class="absolute left-1/2 -translate-x-1/2 -top-6 w-4 h-4 bg-primary rounded-full"></div>
+<div class="pt-8 text-center">
+<span class="inline-block px-4 py-1 bg-primary text-white rounded-full text-sm font-medium mb-3">2022</span>
+<h3 class="text-lg font-semibold mb-2">B Corp Certification</h3>
+<p class="text-gray-600 text-sm">Achieved B Corporation certification, meeting rigorous standards of social and environmental performance.</p>
+</div>
+</div>
+
+<!-- 2023 -->
+<div class="relative w-64">
+<div class="absolute left-1/2 -translate-x-1/2 -top-6 w-4 h-4 bg-primary rounded-full"></div>
+<div class="pt-8 text-center">
+<span class="inline-block px-4 py-1 bg-primary text-white rounded-full text-sm font-medium mb-3">2023</span>
+<h3 class="text-lg font-semibold mb-2">Clean Water Initiative</h3>
+<p class="text-gray-600 text-sm">Launched clean water projects in Kenya, providing safe drinking water to 10,000+ people.</p>
+</div>
+</div>
+
+<!-- 2024 -->
+<div class="relative w-64">
+<div class="absolute left-1/2 -translate-x-1/2 -top-6 w-4 h-4 bg-primary rounded-full"></div>
+<div class="pt-8 text-center">
+<span class="inline-block px-4 py-1 bg-primary text-white rounded-full text-sm font-medium mb-3">2024</span>
+<h3 class="text-lg font-semibold mb-2">Carbon Neutral Operations</h3>
+<p class="text-gray-600 text-sm">Achieved carbon neutrality across all operations through renewable energy and carbon offset programs.</p>
+</div>
+</div>
+
+<!-- 2025 -->
+<div class="relative w-64">
+<div class="absolute left-1/2 -translate-x-1/2 -top-6 w-4 h-4 bg-gray-300 rounded-full"></div>
+<div class="pt-8 text-center">
+<span class="inline-block px-4 py-1 bg-gray-200 text-gray-700 rounded-full text-sm font-medium mb-3">2025</span>
+<h3 class="text-lg font-semibold mb-2">Future Goals</h3>
+<p class="text-gray-600 text-sm">Target: 100% circular product design and 2 million plastic bottles saved from landfills.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="bg-white rounded-lg p-8 shadow-sm border border-gray-100">
+<h3 class="text-xl font-semibold mb-6">Key Environmental Milestones</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<ul class="space-y-4">
+<li class="flex items-start">
+<div class="w-8 h-8 flex items-center justify-center bg-primary bg-opacity-20 rounded-full text-primary mr-3 flex-shrink-0 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<h4 class="font-medium">1 Million Plastic Bottles Saved</h4>
+<p class="text-gray-600 text-sm">Reached in March 2024, preventing plastic waste from entering landfills and oceans</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-8 h-8 flex items-center justify-center bg-primary bg-opacity-20 rounded-full text-primary mr-3 flex-shrink-0 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<h4 class="font-medium">50,000 Trees Planted</h4>
+<p class="text-gray-600 text-sm">Milestone reached in January 2024, helping to combat deforestation and climate change</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-8 h-8 flex items-center justify-center bg-primary bg-opacity-20 rounded-full text-primary mr-3 flex-shrink-0 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<h4 class="font-medium">100% Renewable Energy</h4>
+<p class="text-gray-600 text-sm">All manufacturing facilities powered by renewable energy sources as of 2023</p>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<ul class="space-y-4">
+<li class="flex items-start">
+<div class="w-8 h-8 flex items-center justify-center bg-primary bg-opacity-20 rounded-full text-primary mr-3 flex-shrink-0 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<h4 class="font-medium">Zero Waste Packaging</h4>
+<p class="text-gray-600 text-sm">Implemented 100% recyclable or compostable packaging across all product lines</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-8 h-8 flex items-center justify-center bg-primary bg-opacity-20 rounded-full text-primary mr-3 flex-shrink-0 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<h4 class="font-medium">15 Clean Water Projects</h4>
+<p class="text-gray-600 text-sm">Completed across 8 countries, providing safe drinking water to communities in need</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-8 h-8 flex items-center justify-center bg-primary bg-opacity-20 rounded-full text-primary mr-3 flex-shrink-0 mt-0.5">
+<i class="ri-check-line"></i>
+</div>
+<div>
+<h4 class="font-medium">Sustainable Supply Chain</h4>
+<p class="text-gray-600 text-sm">Achieved 85% reduction in supply chain carbon footprint through optimization</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Get Involved Section -->
+<section class="py-16 bg-[#F5F1E8]">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-3">Join Our Mission</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">There are many ways you can participate in our sustainability efforts and amplify your own positive impact.</p>
+</div>
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Left Column - Ways to Get Involved -->
+<div class="bg-white rounded-lg p-8 shadow-sm">
+<h3 class="text-xl font-semibold mb-6">Ways to Get Involved</h3>
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-20 rounded-full text-primary mr-4 flex-shrink-0">
+<i class="ri-recycle-line ri-lg"></i>
+</div>
+<div>
+<h4 class="text-lg font-medium mb-2">Join Our Recycling Program</h4>
+<p class="text-gray-600 mb-3">Send back your old bottles for recycling and receive a discount on your next purchase.</p>
+<a href="#" class="text-primary font-medium hover:underline">Learn more →</a>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-20 rounded-full text-primary mr-4 flex-shrink-0">
+<i class="ri-team-line ri-lg"></i>
+</div>
+<div>
+<h4 class="text-lg font-medium mb-2">Participate in Clean-Up Events</h4>
+<p class="text-gray-600 mb-3">Join our community clean-up events organized in partnership with local environmental groups.</p>
+<a href="#" class="text-primary font-medium hover:underline">Find events →</a>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-20 rounded-full text-primary mr-4 flex-shrink-0">
+<i class="ri-share-line ri-lg"></i>
+</div>
+<div>
+<h4 class="text-lg font-medium mb-2">Share Your Impact Story</h4>
+<p class="text-gray-600 mb-3">Tell us how our products have helped you reduce waste and inspire others to make sustainable choices.</p>
+<a href="#" class="text-primary font-medium hover:underline">Submit your story →</a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Right Column - Impact Calculator -->
+<div class="bg-white rounded-lg p-8 shadow-sm">
+<h3 class="text-xl font-semibold mb-6">Calculate Your Impact</h3>
+<p class="text-gray-600 mb-6">See how much plastic waste you can prevent by switching to reusable bottles.</p>
+<div class="space-y-6">
+<div>
+<label for="bottlesPerWeek" class="block text-sm font-medium text-gray-700 mb-2">How many single-use bottles do you use weekly?</label>
+<input type="range" id="bottlesPerWeek" min="1" max="20" value="7" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+<div class="flex justify-between text-xs text-gray-500 mt-1">
+<span>1</span>
+<span>5</span>
+<span>10</span>
+<span>15</span>
+<span>20</span>
+</div>
+<p class="text-center mt-2 font-medium" id="bottlesValue">7 bottles per week</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-6">
+<h4 class="text-lg font-medium mb-4 text-center">Your Annual Impact</h4>
+<div class="grid grid-cols-2 gap-4">
+<div class="text-center">
+<p class="text-3xl font-bold text-primary" id="bottlesSaved">364</p>
+<p class="text-sm text-gray-600">Plastic Bottles Saved</p>
+</div>
+<div class="text-center">
+<p class="text-3xl font-bold text-primary" id="plasticWeight">18.2</p>
+<p class="text-sm text-gray-600">kg of Plastic Prevented</p>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-opacity-90 transition-colors mt-4 whitespace-nowrap">Shop Reusable Bottles</button>
+</div>
+</div>
+</div>
+
+<div class="mt-12 text-center">
+<a href="#" class="inline-block bg-secondary text-white px-8 py-3 rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Download Our Impact Report</a>
+</div>
+</div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="text-3xl font-bold mb-3">Stay Updated on Our Impact</h2>
+<p class="text-gray-600 mb-8">Subscribe to receive our quarterly impact reports, sustainability tips, and exclusive offers.</p>
+<div class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+<input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-button border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary shadow-sm">
+<button class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Subscribe</button>
+</div>
+<div class="mt-8 flex items-center justify-center">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-20 rounded-full text-primary mr-4">
+<i class="ri-mail-send-line ri-lg"></i>
+</div>
+<p class="text-gray-700 font-medium">Join 25,000+ eco-conscious subscribers</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-white pt-16 pb-8 border-t border-gray-100">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<!-- Company Info -->
+<div>
+<a href="#" class="text-3xl font-['Pacifico'] text-primary mb-6 inline-block">logo</a>
+<p class="text-gray-600 mb-6">We're on a mission to eliminate single-use plastic bottles while providing premium hydration solutions that last a lifetime.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors">
+<i class="ri-twitter-x-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors">
+<i class="ri-pinterest-line"></i>
+</a>
+</div>
+</div>
+<!-- Quick Links -->
+<div>
+<h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+<ul class="space-y-3">
+<li><a href="https://readdy.ai/home/d48ef4ce-be6e-413a-bf04-2fc026239dee/ed5d46be-3e96-4dcd-ba88-b9fade3ed90f" data-readdy="true" class="text-gray-600 hover:text-primary transition-colors">Home</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Shop All</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">About Us</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Sustainability</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Our Impact</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Blog</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">FAQ</a></li>
+</ul>
+</div>
+<!-- Impact Resources -->
+<div>
+<h4 class="text-lg font-semibold mb-6">Impact Resources</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Impact Reports</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Sustainability Policy</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Partner Organizations</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Recycling Program</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Clean-Up Events</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Environmental Blog</a></li>
+</ul>
+</div>
+<!-- Contact Info -->
+<div>
+<h4 class="text-lg font-semibold mb-6">Contact Us</h4>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-1">
+<i class="ri-map-pin-line"></i>
+</div>
+<span class="text-gray-600">123 Eco Way, Portland, OR 97201</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-1">
+<i class="ri-phone-line"></i>
+</div>
+<span class="text-gray-600">(503) 555-0123</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-3 mt-1">
+<i class="ri-mail-line"></i>
+</div>
+<span class="text-gray-600">hello@ecobottle.com</span>
+</li>
+</ul>
+<h4 class="text-lg font-semibold mt-8 mb-4">We Accept</h4>
+<div class="flex space-x-3">
+<div class="w-10 h-6 flex items-center justify-center text-gray-600">
+<i class="ri-visa-fill ri-lg"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center text-gray-600">
+<i class="ri-mastercard-fill ri-lg"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center text-gray-600">
+<i class="ri-paypal-fill ri-lg"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center text-gray-600">
+<i class="ri-apple-fill ri-lg"></i>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-gray-100 text-center text-gray-500 text-sm">
+<p>&copy; 2025 EcoBottle. All rights reserved. Designed Biyejid Hosen</p>
+</div>
+</div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize Impact Chart
+  const impactChart = document.getElementById('impactChart');
+  if (impactChart) {
+    const chart = echarts.init(impactChart);
+    const option = {
+      animation: false,
+      tooltip: {
+        trigger: 'axis',
+        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        borderColor: '#F5F1E8',
+        textStyle: {
+          color: '#1f2937'
+        }
+      },
+      legend: {
+        data: ['Plastic Bottles Saved', 'Trees Planted', 'Clean Water (gallons)'],
+        bottom: 10
+      },
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '15%',
+        top: '3%',
+        containLabel: true
+      },
+      xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: ['2020', '2021', '2022', '2023', '2024', '2025 (Projected)'],
+        axisLine: {
+          lineStyle: {
+            color: '#ddd'
+          }
+        }
+      },
+      yAxis: {
+        type: 'value',
+        axisLine: {
+          show: false
+        },
+        axisLabel: {
+          color: '#666'
+        },
+        splitLine: {
+          lineStyle: {
+            color: '#f0f0f0'
+          }
+        }
+      },
+      series: [
+        {
+          name: 'Plastic Bottles Saved',
+          type: 'line',
+          data: [12000, 45000, 98000, 167000, 256000, 350000],
+          smooth: true,
+          symbol: 'none',
+          lineStyle: {
+            width: 3,
+            color: 'rgba(87, 181, 231, 1)'
+          },
+          areaStyle: {
+            color: {
+              type: 'linear',
+              x: 0,
+              y: 0,
+              x2: 0,
+              y2: 1,
+              colorStops: [{
+                offset: 0, color: 'rgba(87, 181, 231, 0.2)'
+              }, {
+                offset: 1, color: 'rgba(87, 181, 231, 0.05)'
+              }]
+            }
+          }
+        },
+        {
+          name: 'Trees Planted',
+          type: 'line',
+          data: [1200, 4500, 9800, 16700, 25600, 52000],
+          smooth: true,
+          symbol: 'none',
+          lineStyle: {
+            width: 3,
+            color: 'rgba(141, 211, 199, 1)'
+          },
+          areaStyle: {
+            color: {
+              type: 'linear',
+              x: 0,
+              y: 0,
+              x2: 0,
+              y2: 1,
+              colorStops: [{
+                offset: 0, color: 'rgba(141, 211, 199, 0.2)'
+              }, {
+                offset: 1, color: 'rgba(141, 211, 199, 0.05)'
+              }]
+            }
+          }
+        },
+        {
+          name: 'Clean Water (gallons)',
+          type: 'line',
+          data: [5000, 20000, 50000, 100000, 180000, 485000],
+          smooth: true,
+          symbol: 'none',
+          lineStyle: {
+            width: 3,
+            color: 'rgba(251, 191, 114, 1)'
+          },
+          areaStyle: {
+            color: {
+              type: 'linear',
+              x: 0,
+              y: 0,
+              x2: 0,
+              y2: 1,
+              colorStops: [{
+                offset: 0, color: 'rgba(251, 191, 114, 0.2)'
+              }, {
+                offset: 1, color: 'rgba(251, 191, 114, 0.05)'
+              }]
+            }
+          }
+        }
+      ]
+    };
+    chart.setOption(option);
+    
+    // Chart tab switching
+    const yearBtn = document.getElementById('yearBtn');
+    const quarterBtn = document.getElementById('quarterBtn');
+    
+    if (yearBtn && quarterBtn) {
+      yearBtn.addEventListener('click', function() {
+        yearBtn.classList.add('active', 'bg-primary', 'text-white');
+        yearBtn.classList.remove('bg-gray-100', 'text-gray-700');
+        quarterBtn.classList.remove('active', 'bg-primary', 'text-white');
+        quarterBtn.classList.add('bg-gray-100', 'text-gray-700');
+        
+        option.xAxis.data = ['2020', '2021', '2022', '2023', '2024', '2025 (Projected)'];
+        chart.setOption(option);
+      });
+      
+      quarterBtn.addEventListener('click', function() {
+        quarterBtn.classList.add('active', 'bg-primary', 'text-white');
+        quarterBtn.classList.remove('bg-gray-100', 'text-gray-700');
+        yearBtn.classList.remove('active', 'bg-primary', 'text-white');
+        yearBtn.classList.add('bg-gray-100', 'text-gray-700');
+        
+        option.xAxis.data = ['Q1 2023', 'Q2 2023', 'Q3 2023', 'Q4 2023', 'Q1 2024', 'Q2 2024'];
+        option.series[0].data = [45000, 65000, 95000, 120000, 150000, 180000];
+        option.series[1].data = [4500, 6500, 9500, 12000, 15000, 18000];
+        option.series[2].data = [25000, 35000, 55000, 75000, 95000, 120000];
+        chart.setOption(option);
+      });
+    }
+    
+    window.addEventListener('resize', function() {
+      chart.resize();
+    });
+  }
+  
+  // Initialize Carbon Chart
+  const carbonChart = document.getElementById('carbonChart');
+  if (carbonChart) {
+    const chart = echarts.init(carbonChart);
+    const option = {
+      animation: false,
+      tooltip: {
+        trigger: 'item',
+        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        borderColor: '#F5F1E8',
+        textStyle: {
+          color: '#1f2937'
+        }
+      },
+      legend: {
+        bottom: '0%',
+        left: 'center'
+      },
+      series: [
+        {
+          name: 'Carbon Reduction',
+          type: 'pie',
+          radius: ['40%', '70%'],
+          avoidLabelOverlap: false,
+          itemStyle: {
+            borderRadius: 10,
+            borderColor: '#fff',
+            borderWidth: 2
+          },
+          label: {
+            show: false,
+            position: 'center'
+          },
+          emphasis: {
+            label: {
+              show: true,
+              fontSize: 16,
+              fontWeight: 'bold'
+            }
+          },
+          labelLine: {
+            show: false
+          },
+          data: [
+            { value: 45, name: 'Manufacturing', itemStyle: { color: 'rgba(87, 181, 231, 1)' } },
+            { value: 25, name: 'Packaging', itemStyle: { color: 'rgba(141, 211, 199, 1)' } },
+            { value: 15, name: 'Shipping', itemStyle: { color: 'rgba(251, 191, 114, 1)' } },
+            { value: 15, name: 'Operations', itemStyle: { color: 'rgba(252, 141, 98, 1)' } }
+          ]
+        }
+      ]
+    };
+    chart.setOption(option);
+    
+    window.addEventListener('resize', function() {
+      chart.resize();
+    });
+  }
+  
+  // Impact Calculator
+  const bottlesPerWeek = document.getElementById('bottlesPerWeek');
+  const bottlesValue = document.getElementById('bottlesValue');
+  const bottlesSaved = document.getElementById('bottlesSaved');
+  const plasticWeight = document.getElementById('plasticWeight');
+  
+  if (bottlesPerWeek && bottlesValue && bottlesSaved && plasticWeight) {
+    bottlesPerWeek.addEventListener('input', function() {
+      const weeklyBottles = parseInt(this.value);
+      bottlesValue.textContent = `${weeklyBottles} bottles per week`;
+      
+      const annualBottles = weeklyBottles * 52;
+      bottlesSaved.textContent = annualBottles;
+      
+      // Assuming average plastic bottle weighs 50g
+      const weightKg = (annualBottles * 50 / 1000).toFixed(1);
+      plasticWeight.textContent = weightKg;
+    });
+  }
+});
+</script>
+</body>
+</html>
